@@ -1,350 +1,458 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Md Maklachur Rahman | PhD Student at Texas A&M University | Medical Image Segmentation, Computer Vision, Vision-Language Models, and Efficient Deep Learning.">
-  <meta name="google-site-verification" content="Lmqh2f-424c1QVAwf0afKAPKTaukCi1gQfzIdEtBq0A" />
-  <title>Md Maklachur Rahman</title>
-  <link rel="icon" type="image/jpg" href="images/maklachur.jpg">
-  <link rel="stylesheet" href="css/pure-min.css">
-  <link rel="stylesheet" href="css/grids-responsive-min.css">
-  <style>
-    :root {
-      --bg: #ffffff;
-      --panel: #ffffff;
-      --text: #1d232b;
-      --muted: #5c6675;
-      --line: #e4e8ee;
-      --accent: #164f86;
-      --accent-soft: #eef4fb;
-      --chip: #f6f8fb;
-      --maxw: 1100px;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.65;
-    }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .page { max-width: var(--maxw); margin: 0 auto; padding: 26px 20px 56px; }
-    .top {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 28px;
-      align-items: start;
-      padding-bottom: 18px;
-      border-bottom: 1px solid var(--line);
-    }
-    .portrait {
-      width: 220px;
-      border-radius: 14px;
-      display: block;
-    }
-    h1 { margin: 0; font-size: 2.05rem; line-height: 1.15; }
-    .subtitle { margin-top: 8px; color: var(--muted); font-size: 1.05rem; font-weight: 600; }
-    .meta { margin-top: 4px; color: var(--muted); }
-    .intro { margin-top: 14px; text-align: justify; }
-    .link-row {
-      display: flex; flex-wrap: wrap; gap: 12px 18px; margin-top: 14px; align-items: center;
-    }
-    .icon-link { display: inline-flex; align-items: center; gap: 7px; font-weight: 600; }
-    .icon-link img { width: 20px; height: 20px; object-fit: contain; }
-    .section { margin-top: 26px; }
-    .section h2 {
-      margin: 0 0 10px; font-size: 1.6rem; line-height: 1.25;
-      padding-bottom: 8px; border-bottom: 1px solid var(--line);
-    }
-    .news-list { margin: 6px 0 0; padding-left: 22px; }
-    .news-list li { margin: 8px 0; }
-    .date { color: var(--muted); font-style: italic; min-width: 78px; display: inline-block; }
-    .twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-    .twocol ul { margin: 0; padding-left: 20px; }
-    .twocol li { margin: 8px 0; }
-    .pub-item {
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 20px;
-      align-items: start;
-      padding: 18px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .pub-item:last-child { border-bottom: none; }
-    .pub-img-wrap { position: relative; }
-    .pub-img {
-      width: 100%; display: block; border: 1px solid var(--line); border-radius: 8px; background: #f8f9fc;
-    }
-    .venue-badge {
-      position: absolute; left: 0; top: 0;
-      background: #0f4c81; color: white; font-size: 0.8rem; font-weight: 700;
-      padding: 3px 10px; border-radius: 8px 0 8px 0;
-      letter-spacing: .01em;
-    }
-    .pub-title { margin: 0 0 6px; font-size: 1.2rem; line-height: 1.35; font-weight: 700; }
-    .authors, .venue-line { color: #242b35; }
-    .venue-line { margin-top: 2px; }
-    .pub-note { margin: 8px 0 0; color: var(--muted); }
-    .pub-links { margin-top: 8px; color: var(--muted); }
-    .pub-links a { font-weight: 600; }
-    .tag {
-      display: inline-block; margin-left: 8px; padding: 2px 8px; border-radius: 999px;
-      background: var(--accent-soft); color: var(--accent); font-size: .82rem; font-weight: 700;
-    }
-    .muted { color: var(--muted); }
-    .mentor-item { padding: 10px 0; border-bottom: 1px solid var(--line); }
-    .mentor-item:last-child { border-bottom: none; }
-    .mentor-name { font-weight: 700; }
-    .small { font-size: 0.95rem; }
-    .footer-note { margin-top: 12px; color: var(--muted); font-size: .95rem; }
-    @media (max-width: 900px) {
-      .top, .pub-item, .twocol { grid-template-columns: 1fr; }
-      .portrait { width: min(240px, 100%); }
-    }
-  </style>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="A layout example that shows off a blog page with a list of posts.">
+	<meta name="google-site-verification" content="Lmqh2f-424c1QVAwf0afKAPKTaukCi1gQfzIdEtBq0A" />
+	<script>
+		(function(i, s, o, g, r, a, m) {
+		            i['GoogleAnalyticsObject'] = r;
+		            i[r] = i[r] || function() {
+		                (i[r].q = i[r].q || []).push(arguments)
+		            }, i[r].l = 1 * new Date();
+		            a = s.createElement(o),
+		                m = s.getElementsByTagName(o)[0];
+		            a.async = 1;
+		            a.src = g;
+		            m.parentNode.insertBefore(a, m)
+		        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+		
+		        ga('create', 'UA-64440901-1', 'auto');
+		        ga('send', 'pageview');
+	</script>
+	<!-- maklachur -->
+	<title>Maklachur Rahman</title>
+	<link rel="icon" type= "image/jpg" href="images/maklachur.jpg">
+	<link rel="stylesheet" href="css/pure-min.css">
+	<link rel="stylesheet" href="css/grids-responsive-min.css">
+	<link rel="stylesheet" href="css/layouts/blog.css">
+	<style>
+		#profile_img {
+		            float: left;
+		            margin-right: 20px;
+		        }
+		        
+		        #profile_contents {
+		            margin-left: 10px;
+		            text-align: middle;
+		            font-family: "Times New Roman";
+		        }
+	</style>
 </head>
+
 <body>
-  <div class="page">
-    <section class="top">
-      <div>
-        <img class="portrait" src="maklachur.jpg" alt="Md Maklachur Rahman">
-      </div>
-      <div>
-        <h1>Md Maklachur Rahman</h1>
-        <div class="subtitle">PhD Student in Computer Science and Engineering</div>
-        <div class="meta">Texas A&amp;M University, College Station, USA</div>
-        <div class="meta">Email: <a href="mailto:maklachur@tamu.edu">maklachur@tamu.edu</a> | <a href="mailto:maklachur@gmail.com">maklachur@gmail.com</a></div>
-        <div class="link-row">
-          <a class="icon-link" href="docs/CV_Maklachur%20Rahman.pdf" target="_blank"><img src="./images/resume_logo.png" alt="CV">CV</a>
-          <a class="icon-link" href="https://scholar.google.com/citations?user=l1uvg8cAAAAJ&amp;hl=en" target="_blank"><img src="./images/google_scholar.jpg" alt="Google Scholar">Scholar</a>
-          <a class="icon-link" href="https://github.com/maklachur" target="_blank"><img src="./images/github_logo.png" alt="GitHub">GitHub</a>
-          <a class="icon-link" href="https://www.linkedin.com/in/maklachur-rahman/" target="_blank"><img src="./images/linkedin_logo.png" alt="LinkedIn">LinkedIn</a>
-          <a class="icon-link" href="https://www.researchgate.net/profile/Md-Maklachur-Rahman-2" target="_blank"><img src="./images/researchgate_logo.png" alt="ResearchGate">ResearchGate</a>
-        </div>
-        <p class="intro">
-          I am a PhD student in Computer Science and Engineering at Texas A&amp;M University. My research focuses on medical image segmentation, computer vision, vision-language modeling, and efficient deep learning. I develop robust and practical learning frameworks for real-world applications, with a strong interest in healthcare-oriented problems. My broader background includes visual tracking, multimodal learning, and deep neural network design.
-        </p>
-      </div>
-    </section>
+	<div id="layout" class="pure-g">
+		<div class="content pure-u">
+			<div>
 
-    <section class="section">
-      <h2>News</h2>
-      <ul class="news-list">
-        <li><span class="date">Mar 2026</span> Two papers are under review at <b>MICCAI 2026</b>, and one manuscript is under review at <b>IJCV</b>.</li>
-        <li><span class="date">Feb 2026</span> One first-authored paper, <b>MambaLiteUNet: Cross-Gated Adaptive Feature Fusion for Robust Skin Lesion Segmentation</b>, was accepted to <b>CVPR 2026</b>.</li>
-        <li><span class="date">2025</span> One first-authored paper, <b>AULUNet: An Adaptive Ultra-Lightweight UNet Framework for Efficient Skin Lesion Segmentation in Resource-Constrained Environments</b>, was accepted to <b>BMVC 2025</b> as an <b>oral presentation</b>.</li>
-        <li><span class="date">2025</span> Selected as an <b>Outstanding Reviewer</b> for <b>BMVC 2025</b>.</li>
-        <li><span class="date">2024</span> Received the <b>AAAI Travel Award</b> and the <b>Texas A&amp;M CS Department Travel Award</b>.</li>
-      </ul>
-      <div class="footer-note">I can add exact acceptance-rate or top-percentage notes once you confirm the official number you want to display.</div>
-    </section>
+				<div class="post-description">
+					<div id="profile_img">
+						<img src="maklachur.jpg" height="200px">
+					</div>
+					<div id="profile_contents" class="post-description">
+						<p> 				<header class="post-header">
+						<h2 class="post-title">Md Maklachur Rahman</h2></header>
+						<b>PhD Student <br /> </b>
+<!-- 							<a href="https://srltamu.com" target="_blank">Sketch Recognition Lab (SRL)</a> -->
+							<a href="https://www.tamu.edu/" target="_blank">Texas A&M University (TAMU)</a>
+							<br />Email: <a href="mailto:maklachur@gmail.com" target="_blank">maklachur [at] gmail [dot] com</a> OR <a href="mailto:maklachur@tamu.edu" target="_blank">maklachur [at] tamu [dot] edu</a>
+				<!--			
+							<br />							
+							<br /> 
+			    <b>
+			     <a href="https://github.com/maklachur/maklachur.github.io/blob/master/docs/Resume_Maklachur%20Rahman.pdf"target="_blank">CV</a>/<a href="https://scholar.google.com/citations?user=l1uvg8cAAAAJ&hl=en"target="_blank">Google Scholar</a>/<a href="https://github.com/maklachur"target="_blank">Github</a><br /> 
+			    </b>
+				-->
+						<b>	
+						<div class="row">
+							 
+							<a href="https://github.com/maklachur/maklachur.github.io/blob/master/docs/CV_Maklachur%20Rahman.pdf"target="_blank">
+							<img border="0" alt="resume" src="./images/resume_logo.png" width="30" height="20"/></a>
 
-    <section class="section">
-      <div class="twocol">
-        <div>
-          <h2>Education</h2>
-          <ul>
-            <li><b>PhD</b>, Computer Science and Engineering, Texas A&amp;M University, USA (Jan 2022 – Present)</li>
-            <li><b>MS</b>, Computer Science and Engineering, Kyungpook National University, South Korea (Sep 2018 – Aug 2020)</li>
-            <li><b>BS</b>, Computer Science and Engineering, Chittagong University of Engineering &amp; Technology, Bangladesh</li>
-          </ul>
-        </div>
-        <div>
-          <h2>Experience</h2>
-          <ul>
-            <li><b>Graduate Research Assistant</b>, Texas A&amp;M University (Jan 2022 – Present)</li>
-            <li><b>Researcher / Research Assistant</b>, Kyungpook National University (Aug 2018 – Dec 2021)</li>
-            <li><b>Software Engineer</b>, Samsung R&amp;D Institute Bangladesh (Oct 2013 – Jul 2016)</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+							<a href="https://www.linkedin.com/in/maklachur-rahman"target="_blank"/>
+							<img border="0" alt="linkedin" src="./images/linkedin_logo.png" width="30" height="30"/></a>
+							
+							<a href="https://www.researchgate.net/profile/Md_Maklachur_Rahman"target="_blank">
+							<img border="0" alt="github" src="./images/researchgate_logo.png" width="30" height="30"/></a>
 
-    <section class="section">
-      <h2>Publications</h2>
+							<a href="https://github.com/maklachur"target="_blank">
+							<img border="0" alt="github" src="./images/github_logo.png" width="30" height="30"/></a>
 
-      <div class="pub-item">
-        <div class="pub-img-wrap">
-          <span class="venue-badge">CVPR 2026</span>
-          <img class="pub-img" src="./images/mambalite_teaser.png" alt="MambaLiteUNet teaser">
-        </div>
-        <div>
-          <h3 class="pub-title">MambaLiteUNet: Cross-Gated Adaptive Feature Fusion for Robust Skin Lesion Segmentation</h3>
-          <div class="authors"><b>Md Maklachur Rahman</b>, Soon Ki Jung, Tracy Hammond</div>
-          <div class="venue-line">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2026</div>
-          <div class="pub-note">First-authored main conference paper on lightweight and robust skin lesion segmentation.</div>
-          <div class="pub-links">[Paper coming soon] [<a href="https://github.com/maklachur/MambaLiteUNet" target="_blank">Project</a>] [<a href="https://github.com/maklachur/MambaLiteUNet" target="_blank">Code</a>]</div>
-        </div>
-      </div>
+							<a href="https://scholar.google.com/citations?user=l1uvg8cAAAAJ&hl=en"target="_blank"/>
+							<img border="0" alt="google_scholar" src="./images/google_scholar.jpg" width="30" height="30"/></a>
 
-      <div class="pub-item">
-        <div class="pub-img-wrap">
-          <span class="venue-badge">BMVC 2025</span>
-          <img class="pub-img" src="./images/aulunet_teaser.png" alt="AULUNet teaser">
-        </div>
-        <div>
-          <h3 class="pub-title">AULUNet: An Adaptive Ultra-Lightweight UNet Framework for Efficient Skin Lesion Segmentation in Resource-Constrained Environments</h3>
-          <div class="authors"><b>Md Maklachur Rahman</b> and collaborators</div>
-          <div class="venue-line">British Machine Vision Conference (BMVC), 2025 <span class="tag">Oral</span></div>
-          <div class="pub-note">First-authored paper focused on efficient medical image segmentation under strict parameter and compute budgets.</div>
-          <div class="pub-links">[Paper coming soon] [<a href="https://github.com/maklachur/AULUNet" target="_blank">Project</a>] [<a href="https://github.com/maklachur/AULUNet" target="_blank">Code</a>]</div>
-        </div>
-      </div>
+						</div> 	
+						</b>
+						</p>	
+				
+					<p style="text-align:justify">I am Md Maklachur Rahman, a CS PhD student at TAMU, College Station, USA. Before joining to PhD, I worked as a Researcher for CSET and primarily for <a href="https://sites.google.com/view/knuvrlab" target="_blank">Virtual Reality Lab (VR Lab)</a> at the <a href="http://computer.knu.ac.kr/eng/main/index.html" target="_blank">School of Computer Science and Engineering</a> <a href="https://en.knu.ac.kr/main/main.htm" target="_blank">at Kyungpook National University (KNU)</a>. I completed my MS under VR Lab as a Research Assistant. Formerly, I worked as a Software Engineer at <a href="https://research.samsung.com/srbd" target="_blank">Samsung R&D Institute Bangladesh</a> for about three years. However, I have completed undergraduate studies at the <a href="https://www.cuet.ac.bd/dept/cse" target="_blank">Department of Computer Science and Engineering</a> at <a href="https://www.cuet.ac.bd/" target="_blank">Chittagong University of Engineering & Technology (CUET)</a>. I am always enthralled by computer science fundamentals and am interested in using deep learning frameworks to solve computer vision problems to improve the quality of life. My research focuses on developing real-time Visual Object Tracking frameworks with potential applications in autonomous vehicles, intelligent surveillance, augmented reality, and medical image analysis. Additionally, I am also involved in developing a community tool that uses machine learning-based Semantic Segmentation for labeling outcrop images. Ultimately, this tool aims to expose geoscience students to computer science and help them explore new geological environments, such as Mars.</p>
+					</div>
+					
+				</div>
+				<header class="post-header">
+					<h2 class="post-title">Education</h2>
+				</header>
+				<div class="post-description">
+					<p>
+						<ul>
+							<li> 
+							 <b>PhD</b>, <a href="https://engineering.tamu.edu/cse/index.html" target="_blank">Department of Computer Science and Engineering</a>, <a href="https://www.tamu.edu/" target="_blank">Texas A&M University, USA</a> (January 2022 - Present)</li>
+							 <span style="padding-left: 20px;"><b>Qualifying Exam: </b> Passed with 99th Percentile [<a href="https://github.com/maklachur/maklachur.github.io/blob/master/docs/mft.pdf" target="_blank">link</a>]<br/>
+<!-- 							 <span style="padding-left: 20px;"><b>Supervisor: </b> Dr. Tracy Hammond <br/> -->
 
-      <div class="pub-item">
-        <div class="pub-img-wrap">
-          <span class="venue-badge">AAAI 2024</span>
-          <img class="pub-img" src="./images/AAAI24-DC.PNG" alt="AAAI 2024 doctoral consortium paper">
-        </div>
-        <div>
-          <h3 class="pub-title">Target Focused Shallow Transformer Framework for Efficient Visual Tracking</h3>
-          <div class="authors"><b>Md Maklachur Rahman</b></div>
-          <div class="venue-line">AAAI 2024 Doctoral Consortium</div>
-          <div class="pub-note">Doctoral consortium paper on efficient transformer-based visual tracking.</div>
-          <div class="pub-links">[<a href="https://aaai.org/aaai-conference/doctoral-consortium-call-for-proposals/" target="_blank">Venue</a>]</div>
-        </div>
-      </div>
+							<li> 
+							 <b>MS</b>, <a href="http://computer.knu.ac.kr/eng/main/index.html" target="_blank">School of Computer Science and Engineering</a>, <a href="https://en.knu.ac.kr/main/main.htm" target="_blank">Kyungpook National University, South Korea</a> (September 2018 - August 2020)</li>
+							 <span style="padding-left: 20px;"><b>Thesis: </b> <a href="http://dcollection.knu.ac.kr/srch/srchDetail/000000097661" target="_blank">Siamese Stacked Channel-Spatial Attention Learning for Visual Tracking</a><br/>
+							 <span style="padding-left: 20px;"><b>Supervisor: </b> Dr. Soon Ki Jung<br/>
+							 <span style="padding-left: 20px;"><b>Award</b>: <a href="https://github.com/maklachur/maklachur.github.io/blob/master/docs/MS_CSE_THESIS_AWARD.pdf" target="_blank">Outstanding Thesis Award</a><br/>
+							 
+							<li> <b>BS</b>, <a href="http://cse.cuet.ac.bd/" target="_blank">Department of Computer Science and Engineering</a>, <a href="https://www.cuet.ac.bd/" target="_blank">Chittagong University of Engineering & Technology, Bangladesh</a> (March 2009 - September 2013)</li>
+							 <span style="padding-left: 20px;"><b>Merit Position</b>: 7th (out of 58)<br/>
+							 <span style="padding-left: 20px;"><b>Thesis: </b> Digital Watermarking for Image Authentication Based on Combined DCT, DWT and SVD Transformation<br/>
+							 <span style="padding-left: 20px;"><b>Supervisor: </b> Dr. Muhammad Ibrahim Khan
+						</ul>
+					</p>
+				</div>
+			</div>
+			<header class="post-header">
+				<h2 class="post-title">Research Experience</h2>
+			</header>
+			<div class="post-description">
+				<p>
+					<ul>
+						<li> <b>Graduate Research Assistant</b>, Sketch Recognition Lab at TAMU (January 2022 - Present)</li>
+						<li> <b>Researcher</b>, <a href="https://en.knu.ac.kr/research/lab03.htm" target="_blank">Center for Embedded Software Technology</a> at KNU (September 2021 - December 2021)</li>
+						<li> <b>Researcher</b>, <a href="https://sites.google.com/view/knuvrlab" target="_blank">Virtual Reality Laboratory</a> at KNU (September 2020 - August 2021)</li>
+						<li> <b>Research Assistant</b>, <a href="https://sites.google.com/view/knuvrlab" target="_blank">Virtual Reality Laboratory</a> at KNU (August 2018 - August 2020)</li>
+					</ul>
+				</p>
+			</div>
+			<header class="post-header">
+				<h2 class="post-title">Industry Experience</h2>
+			</header>
+			<div class="post-description">
+				<p>
+					<ul>
+						<li> <b>Software Engineer</b>, <a href="https://research.samsung.com/srbd" target="_blank">Samsung R&D Institute Bangladesh</a> (October 2013 - July 2016)</li>
+						<li> <b>Industrial Attachment Training</b>, <a href="https://www.linkedin.com/company/sentinel-solutions-ltd" target="_blank">Sentinel Solutions Ltd. Dhaka, Bangladesh</a> (November 2012 - December 2012)</li>
+					</ul>
+				</p>
+			</div>
+			<header class="post-header">
+				<h2 class="post-title">Publications</h2>
+			</header>
+			<div class="post-description">
+				<p>
+			<table>
+    <tr>
+        <td>
+            <img src="./images/AAAI24-DC.PNG" alt="AAAI24-DC" class="image left" width="250px" />
+        </td>
+        <td>
+            <div class="media">
+                <div class="media-body">
+                    <ul>
+                        <li>
+                            <b>Target Focused Shallow Transformer Framework for Efficient Visual Tracking</b> [<b>Accepted</b>] <br />
+                            <b>Md Maklachur Rahman</b> <br />
+                            <a href="https://aaai.org/aaai-conference/doctoral-consortium-call-for-proposals/" target="_blank">The 38th Annual AAAI Conference on Artificial Intelligence, Vancouver, Canada - AAAI 24 (Doctoral Consortium)</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
 
-      <div class="pub-item">
-        <div class="pub-img-wrap">
-          <span class="venue-badge">AAAI 2024</span>
-          <img class="pub-img" src="./images/AAAI24-SA.PNG" alt="AAAI 2024 student abstract">
-        </div>
-        <div>
-          <h3 class="pub-title">Learning Random Noise Salient Feature Fusion Siamese Network for Low-Resolution Object Tracking</h3>
-          <div class="authors"><b>Md Maklachur Rahman</b>, Tracy Hammond</div>
-          <div class="venue-line">AAAI 2024 Student Abstract and Poster Program</div>
-          <div class="pub-note">Student abstract on robust low-resolution visual tracking.</div>
-          <div class="pub-links">[<a href="https://aaai.org/aaai-conference/student-abstract-and-poster-program-call-for-proposals/" target="_blank">Venue</a>]</div>
-        </div>
-      </div>
+<table>
+    <tr>
+        <td>
+            <img src="./images/AAAI24-SA.PNG" alt="AAAI24-SA" class="image left" width="250px" />
+        </td>
+        <td>
+            <div class="media">
+                <div class="media-body">
+                    <ul>
+                        <li>
+                            <b>Learning Random Noise Salient Feature Fusion Siamese Network for Low-Resolution Object Tracking</b> [<b>Accepted</b>] <br />
+                            <b>Md Maklachur Rahman</b> and Tracy Hammond <br />
+                            <a href="https://aaai.org/aaai-conference/student-abstract-and-poster-program-call-for-proposals/" target="_blank">
+                                The 38th Annual AAAI Conference on Artificial Intelligence, Vancouver, Canada - AAAI 24 (Student Abstract and Poster Program)
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
 
-      <div class="pub-item">
-        <div class="pub-img-wrap">
-          <span class="venue-badge">Electronics 2020</span>
-          <img class="pub-img" src="./images/SiamFRN_arch.JPG" alt="SiamFRN paper">
-        </div>
-        <div>
-          <h3 class="pub-title">Siamese High-Level Feature Refine Network for Visual Object Tracking</h3>
-          <div class="authors"><b>Md Maklachur Rahman</b>, Md Rishad Ahmed, Lamyanba Laishram, Seock Ho Kim, Soon Ki Jung</div>
-          <div class="venue-line">Electronics, 2020</div>
-          <div class="pub-note">Journal paper on refining high-level features for robust visual object tracking.</div>
-          <div class="pub-links">[<a href="https://www.mdpi.com/2079-9292/9/11/1918/htm" target="_blank">Paper</a>] [<a href="https://github.com/maklachur/SiamFRN" target="_blank">Code</a>]</div>
-        </div>
-      </div>
+<table>
+    <tr>
+        <td>
+            <img src="./images/book_chapter1.JPG" alt="book_chapter1" class="image left" width="250px" />
+        </td>
+        <td>
+            <div class="media">
+                <div class="media-body">
+                    <ul>
+                        <li>
+                            <b>Chapter Title: Siamese-based Attention Learning Networks for Robust Visual Object Tracking</b> [Book Chapter] <br />
+                            <b>Md Maklachur Rahman</b> and Soon Ki Jung <br />
+                            <b>Book title:</b> Visual Object Tracking <a href="https://www.intechopen.com/online-first/80109" target="_blank">[IntechOpen_download]</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
 
-      <div class="pub-item">
-        <div class="pub-img-wrap">
-          <span class="venue-badge">IEEE Access 2020</span>
-          <img class="pub-img" src="./images/SCSAtt.JPG" alt="SCSAtt paper">
-        </div>
-        <div>
-          <h3 class="pub-title">Efficient Visual Tracking with Stacked Channel-Spatial Attention Learning</h3>
-          <div class="authors"><b>Md Maklachur Rahman</b>, Mustansar Fiaz, Soon Ki Jung</div>
-          <div class="venue-line">IEEE Access, 2020</div>
-          <div class="pub-note">Journal paper on channel-spatial attention learning for efficient tracking.</div>
-          <div class="pub-links">[<a href="https://ieeexplore.ieee.org/abstract/document/9102303" target="_blank">Paper</a>] [<a href="https://github.com/maklachur/SCSAtt" target="_blank">Code</a>]</div>
-        </div>
-      </div>
+<table>
+    <tr>
+        <td>
+            <img src="./images/deepfake_iwfcv2021.JPG" alt="deepfake_iwfcv2021" class="image left" width="250px" />
+        </td>
+        <td>
+            <div class="media">
+                <div class="media-body">
+                    <ul>
+                        <li>
+                            <b>Challenges and Applications of Face Deepfake</b> [Conference][<b>Oral Presentation</b>] [<b>Citation: 5</b>] <br />
+                            Lamyanba Laishram, <b>Md Maklachur Rahman</b>, and Soon Ki Jung <br />
+                            <a href="https://sites.google.com/view/iwfcv2021" target="_blank">The 27th International Workshop on Frontiers of Computer Vision (IW-FCV2021), South Korea</a>
+                            <a href="https://link.springer.com/chapter/10.1007/978-3-030-81638-4_11" target="_blank">[In Springer]</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
 
-      <div class="pub-item">
-        <div class="pub-img-wrap">
-          <span class="venue-badge">IW-FCV 2020</span>
-          <img class="pub-img" src="./images/afs_tracker.JPG" alt="AFS Siam paper">
-        </div>
-        <div>
-          <h3 class="pub-title">Adaptive Feature Selection Siamese Networks for Visual Tracking</h3>
-          <div class="authors">Mustansar Fiaz, <b>Md Maklachur Rahman</b>, Arif Mahmood, Sehar Shahzad Farooq, Ki Yeol Baek, Soon Ki Jung</div>
-          <div class="venue-line">International Workshop on Frontiers of Computer Vision, 2020 <span class="tag">Best Student Paper Award</span> <span class="tag">Oral</span></div>
-          <div class="pub-note">Conference paper on adaptive feature selection for Siamese visual tracking.</div>
-          <div class="pub-links">[<a href="https://link.springer.com/chapter/10.1007%2F978-981-15-4818-5_13" target="_blank">Paper</a>] [<a href="https://github.com/mustansarfiaz/AFS-Siam" target="_blank">Code</a>]</div>
-        </div>
-      </div>
-
-      <div class="pub-item">
-        <div class="pub-img-wrap">
-          <span class="venue-badge">IW-FCV 2021</span>
-          <img class="pub-img" src="./images/deepfake_iwfcv2021.JPG" alt="Face deepfake paper">
-        </div>
-        <div>
-          <h3 class="pub-title">Challenges and Applications of Face Deepfake</h3>
-          <div class="authors">Lamyanba Laishram, <b>Md Maklachur Rahman</b>, Soon Ki Jung</div>
-          <div class="venue-line">International Workshop on Frontiers of Computer Vision, 2021 <span class="tag">Oral</span></div>
-          <div class="pub-note">Conference paper discussing challenges, applications, and implications of face deepfakes.</div>
-          <div class="pub-links">[<a href="https://link.springer.com/chapter/10.1007/978-3-030-81638-4_11" target="_blank">Paper</a>] [<a href="https://sites.google.com/view/iwfcv2021" target="_blank">Project</a>]</div>
-        </div>
-      </div>
-
-      <div class="pub-item">
-        <div class="pub-img-wrap">
-          <span class="venue-badge">Book Chapter</span>
-          <img class="pub-img" src="./images/book_chapter1.JPG" alt="Book chapter">
-        </div>
-        <div>
-          <h3 class="pub-title">Siamese-based Attention Learning Networks for Robust Visual Object Tracking</h3>
-          <div class="authors"><b>Md Maklachur Rahman</b>, Soon Ki Jung</div>
-          <div class="venue-line">In <i>Visual Object Tracking</i>, IntechOpen, 2021</div>
-          <div class="pub-note">Book chapter summarizing Siamese-based attention learning methods for visual tracking.</div>
-          <div class="pub-links">[<a href="https://www.intechopen.com/online-first/80109" target="_blank">Chapter</a>]</div>
-        </div>
-      </div>
-
-      <div class="pub-item">
-        <div class="pub-img-wrap">
-          <span class="venue-badge">Earlier Work</span>
-          <img class="pub-img" src="./images/combined_4.JPG" alt="Digital watermarking paper">
-        </div>
-        <div>
-          <h3 class="pub-title">Digital Watermarking for Image Authentication Based on Combined DCT, DWT and SVD Transformation</h3>
-          <div class="authors">Mohammad Ibrahim Khan, <b>Md Maklachur Rahman</b>, Md Iqbal Hasan Sarker</div>
-          <div class="venue-line">International Journal of Computer Science Issues, 2013</div>
-          <div class="pub-note">Earlier undergraduate work on digital watermarking and image authentication. This is fine to keep lower on the page to show research breadth.</div>
-          <div class="pub-links">[<a href="https://arxiv.org/abs/1307.6328" target="_blank">ArXiv</a>] [<a href="https://www.ijcsi.org/articles/Digital-watermarking-for-image-authentication-based-on-combined-dct-dwt-and-svd-transformation.php" target="_blank">Journal</a>]</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Advising &amp; Mentoring</h2>
-      <div class="mentor-item">
-        <div class="mentor-name">Undergraduate and junior research mentoring at Texas A&amp;M University</div>
-        <div class="small muted">I mentor students working on medical image segmentation, computer vision, and related deep learning topics.</div>
-      </div>
-      <div class="mentor-item">
-        <div class="mentor-name">Add current student list here</div>
-        <div class="small muted">Format example: Student Name — topic / role / paper or project link.</div>
-      </div>
-      <div class="mentor-item">
-        <div class="mentor-name">Add paper outcomes here</div>
-        <div class="small muted">Format example: Student Name — Paper Title [Paper] [Code].</div>
-      </div>
-      <div class="footer-note">I did not invent student names or papers here. Send me the exact advisee list and I will place them directly into this section.</div>
-    </section>
-
-    <section class="section">
-      <div class="twocol">
-        <div>
-          <h2>Honors &amp; Awards</h2>
-          <ul>
-            <li>BMVC Outstanding Reviewer</li>
-            <li>AAAI Travel Award</li>
-            <li>Texas A&amp;M CS Department Travel Award</li>
-            <li>Outstanding MS Thesis Award, Kyungpook National University</li>
-            <li>Best Student Paper Award, IW-FCV 2020</li>
-          </ul>
-        </div>
-        <div>
-          <h2>Academic Service</h2>
-          <ul>
-            <li>Reviewer: AAAI, CVPR, BMVC, ECCV</li>
-            <li>Reviewer: Pattern Recognition, Neurocomputing, Pattern Recognition Letters, Displays, and others</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </div>
+					<table>
+						<tr>
+							<td>
+								<img src="./images/SiamFRN_arch.JPG" alt="SiamFRN" class="image left" width="250px" />
+							</td>
+							<td>
+								<div class="media">
+									<div class="media-body">
+										<ul>
+											<li> <a href="https://www.mdpi.com/2079-9292/9/11/1918/htm" target="_blank"><b>Siamese High-Level Feature Refine Network for Visual Object Tracking</b></a> (<b> SCIE </b>)[<b> IF: 2.69</b>] [<b>Citation: 8</b>]
+												<br/> <b>Md Maklachur Rahman</b>, Md Rishad Ahmed, Lamyanba Laishram, Seock Ho Kim and Soon Ki Jung
+												<br />	<a href="https://www.mdpi.com/journal/electronics" target="_blank">Electronics</a> Vol.9, No.11, pp.1918-, ISSN. 20799292, Year: 2020. <a href="https://www.mdpi.com/2079-9292/9/11/1918/htm" target="_blank">[Paper]</a> [<a href="https://github.com/maklachur/SiamFRN" target="_blank">Code</a>]
+											</li>
+										</ul>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td>
+								<img src="./images/SCSAtt.JPG" alt="SCSAtt" class="image left" width="250px" />
+							</td>
+							<td>
+								<div class="media">
+									<div class="media-body">
+										<ul>
+											<li> <a href="https://ieeexplore.ieee.org/abstract/document/9102303" target="_blank"><b>Efficient Visual Tracking with Stacked Channel-Spatial Attention Learning </b></a>(<b> SCIE </b>)[<b> Q1, IF: 3.367</b>][<b>Citation: 21</b>]
+												<br /> <b>Md Maklachur Rahman</b>, Mustansar Fiaz, and Soon Ki Jung
+												<br />	<a href="https://ieeeaccess.ieee.org" target="_blank">IEEE Access</a>, Volume: 8, Issue:1, Page: 100857-100869, DOI: 10.1109/ACCESS.2020.2997917, Year: 2020. <a href="https://ieeexplore.ieee.org/abstract/document/9102303" target="_blank">[Paper]</a> [<a href="https://github.com/maklachur/SCSAtt" target="_blank">Code</a>]
+											</li>
+										</ul>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td>
+								<img src="./images/afs_tracker.JPG" alt="afs_tracker" class="image left" width="250px" />
+							</td>
+							<td>
+								<div class="media">
+									<div class="media-body">
+										<ul>
+											<li> <a href="https://link.springer.com/chapter/10.1007%2F978-981-15-4818-5_13" target="_blank"><b>Adaptive Feature Selection Siamese Networks for Visual Tracking </b></a>[<b>Best Student Paper Award</b>][Conference][<b>Oral Presentation</b>][<b>Citation: 8</b>]
+												<br />Mustansar Fiaz, <b>Md Maklachur Rahman</b>, Arif Mahmood, Sehar Shahzad Farooq, Ki Yeol Baek and Soon Ki Jung
+												<br /> <a href="http://www.cvg.ait.kyushu-u.ac.jp/FCV2020/" target="_blank">The 26th International Workshop on Frontiers of Computer Vision (IW-FCV2020), Japan</a> [<a href="https://link.springer.com/chapter/10.1007%2F978-981-15-4818-5_13" target="_blank"><b>In Springer</b></a>] [<a href="https://github.com/mustansarfiaz/AFS-Siam" target="_blank">Code</a>]
+											</li>
+										</ul>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td>
+								<img src="./images/secure_model.JPG" alt="secure_model" class="image left" width="250px" />
+							</td>
+							<td>
+								<div class="media">
+									<div class="media-body">
+										<ul>
+											<li> <a href="http://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07613812" target="_blank"><b>Modeling a secure image authentication with a robust hybrid watermarking approach</b></a> [Conference][<b>Oral Presentation</b>]
+												<br /> <b>Md Maklachur Rahman</b>, Soon Ki Jung
+												<br /> <a href="http://www.kiise.or.kr/academyEng/main/main.faEng" target="_blank">The Korean Institute of Information Scientists and Engineers (한국정보과학회 학술발표논문집)</a>, <a href="http://www.kiise.or.kr/conference/KSC/2018/" target="_blank">Korea Software Congress 2018</a> [<a href="http://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07613812" target="_blank">Paper</a>]</li>
+										</ul>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td>
+								<img src="./images/semi_blind.JPG" alt="semi_blind" class="image left" width="250px" />
+							</td>
+							<td>
+								<div class="media">
+									<div class="media-body">
+										<ul>
+											<li> <a href="https://globaljournals.org/item/6503-a-semi-blind-watermarking-technique-for-copyright-protection-of-image-based-on-dct-and-svd-domain" target="_blank"><b>A Semi-Blind Watermarking Technique for Copyright Protection of Image Based on DCT and SVD Domain</b></a> [<b>Citation: 20</b>]
+												<br /> <b>Md Maklachur Rahman</b>, Md Shale Ahmmed, Md Rishad Ahmed, Mohammed Navid Izhar
+												<br /> <a href="https://globaljournals.org/journals/engineering-research-journal" target="_blank">Global Journal of Researches in Engineering</a>, GJRE-F Volume 16 Issue 7 Version 1.0. December 2016. [<a href="https://globaljournals.org/GJRE_Volume16/2-A-Semi-Blind-Watermarking.pdf" target="_blank">Paper</a>]</li>
+										</ul>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td>
+								<img src="./images/piracy.JPG" alt="piracy" class="image left" width="250px" />
+							</td>
+							<td>
+								<div class="media">
+									<div class="media-body">
+										<ul>
+											<li> <a href="https://arxiv.org/abs/1307.3294" target="_blank"><b>A DWT, DCT and SVD Based Watermarking Technique to Protect the Image Piracy</b></a> [<b>Citation: 71</b>]
+												<br /> <b>Md Maklachur Rahman</b>
+												<br /> <a href="http://airccse.org/journal/mpict/papers/4213ijmpict03.pdf" target="_blank">International Journal of Managing Public Sector Information and Communication Technologies</a>, Vol. 4, No. 2, June 2013, pp 21-32. DOI: 10.5121/ijmpict.2013.4203</li>
+										</ul>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td>
+								<img src="./images/combined_4.JPG" alt="combined_4" class="image left" width="250px" />
+							</td>
+							<td>
+								<div class="media">
+									<div class="media-body">
+										<ul>
+											<li> <a href="https://arxiv.org/abs/1307.6328" target="_blank"><b>Digital Watermarking for Image Authentication Based on Combined DCT, DWT and SVD Transformation</b></a> [<b>Citation: 63</b>]
+												<br />Mohammad Ibrahim Khan, <b>Md Maklachur Rahman</b>, and Md Iqbal Hasan Sarker
+												<br /> <a href="https://www.ijcsi.org/articles/Digital-watermarking-for-image-authentication-based-on-combined-dct-dwt-and-svd-transformation.php" target="_blank">International Journal of Computer Science Issues</a>, Vol. 10, Issue 3, No 1, May 2013, pp - 223-230.</li>
+										</ul>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</p>
+			</div>
+			<header class="post-header">
+				<h2 class="post-title">Projects(Selected)</h2>
+			</header>
+			<div class="post-description">
+				<p>
+					<ul>
+						<!-- <li><a href="https://colab.research.google.com/drive/1gJRgZDKroIpNO6ooouAfMYNhqZcSOKPZ" target="_blank">Deep learning technique for skin lesion segmentation</a>
+						</li> -->
+						<li>Siamese network for single object tracking</li>
+						<span style="padding-left: 20px;"><b>Language or Tools:</b> Python, PyTorch
+						<li>LSTM network for visual object tracking</li>
+						<span style="padding-left: 20px;"><b>Language or Tools:</b> Python, TensorFlow
+						<li>SWC/DMC Project Test Suite and IoT Test FW Development</li>
+						<span style="padding-left: 20px;"><b>Language or Tools:</b> C, C++, and Java
+						<li>Tizen IDE Verification and Automation</li>
+						<span style="padding-left: 20px;"><b>Language or Tools:</b> C, C++, and Java
+						<li>Digital image watermarking using multiple transformation model</li>
+						<span style="padding-left: 20px;"><b>Language or Tools:</b> Matlab
+						<li>Multi-portion Image Encryption using RSA Algorithm</li>
+						<span style="padding-left: 20px;"><b>Language or Tools:</b> Matlab
+						<li>Location Based Reminder System Using GPS</li>
+						<span style="padding-left: 20px;"><b>Language or Tools:</b> Android, Google map
+						<li>Mobile Phone Booth Customer Care Management Simulator</li>
+						<span style="padding-left: 20px;"><b>Language or Tools:</b> Java, Oracle
+						<!--
+						<li>Location Based Reminder System Using GPS</li>
+						<li>Chess Player Design using Artificial Intelligence</li>
+						<li>Mobile Phone Booth Customer Care Management Simulator</li>
+						<li>Bank Management System Analysis and Design of Sonali Bank Ltd. CUET Branch (Account Section)</li>
+						<li>Online Digital Hall Management System</li>
+						<li>Hospital Management System</li> -->
+					</ul>
+				</p>
+			</div>
+			<header class="post-header">
+				<h2 class="post-title">Research Interests</h2>
+			</header>
+			<div class="post-description">
+				<p>
+					<ul>
+					    <li>Visual Object Tracking and Segmentation</li>
+					    <li>Computer Vision</li>
+					    <li>Machine Learning</li>
+					    <li>Deep Learning</li>
+					    <li>Visual Question Answering</li>
+					    <li>Activity Recognition and Localization</li>
+					    <li>Scene Understanding and Generation</li>
+					    <li>Multi-Modal AI</li>
+					    <li>Medical Image Analysis and Segmentation</li>
+					</ul>
+				</p>
+			</div>
+			<header class="post-header">
+				<h2 class="post-title">Awards and Scholarships</h2>
+			</header>
+			<div class="post-description">
+				<p>
+					<ul>
+						<li><b>AAAI Travel Award</b>, 38th AAAI 24, Vancouver, Canada</li>
+						<li><b>CSE THESIS AWARD-2020</b>, [<b>Master's Thesis</b>], Kyungpook National University, South Korea [Prize Money: <b>750000 KRW</b>] [<a href="https://github.com/maklachur/maklachur.github.io/blob/master/docs/MS_CSE_THESIS_AWARD.pdf" target="_blank">Certificate</a>]</li> 
+						<li><b>Best Student Paper Award</b>, 26th IW-FCV2020, Japan [<a href="https://github.com/maklachur/maklachur.github.io/blob/master/docs/IW-FCV_Best_Student_Paper_Award.png" target="_blank">Certificate</a>]</li>
+						<li><b>Brain Korea (BK) 21 PLUS Scholarship</b>, Duration: Sept. 2018 – Aug. 2020, South Korea</li>
+						<li><b>KNU International Graduate Scholarship (KINGS) [Full]</b>, Duration: Sept. 2018 – Aug. 2020, South Korea</li>
+						<li><b>University Merit Scholarship</b>, Duration: Mar. 2009 - Sept. 2013, CUET, Bangladesh</li>
+					</ul>
+				</p>
+			</div>
+			<header class="post-header">
+				<h2 class="post-title">Journal and Conference Reviewer</h2>
+			</header>
+			<div class="post-description">
+				<p>
+					<ul>
+						<li>Neurocomputing [Journal]</li>
+						<li>Pattern Recognition Letters [Journal]</li>
+						<li>EEE Access [Journal]</li>
+						<li>MDPI: Electronics, Entropy [Journal] </li>
+						<li>Displays [Journal]</li>
+						<li>Computers in Human Behavior [Journal] </li>
+						<li>Pattern Recognition [Journal]</li>
+						<li>Graphics Interface 2023 Conference</li>
+						
+					</ul>
+				</p>
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
+	</br>
 </body>
+
 </html>
