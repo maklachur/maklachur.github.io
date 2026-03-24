@@ -1,458 +1,1082 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="A layout example that shows off a blog page with a list of posts.">
-	<meta name="google-site-verification" content="Lmqh2f-424c1QVAwf0afKAPKTaukCi1gQfzIdEtBq0A" />
-	<script>
-		(function(i, s, o, g, r, a, m) {
-		            i['GoogleAnalyticsObject'] = r;
-		            i[r] = i[r] || function() {
-		                (i[r].q = i[r].q || []).push(arguments)
-		            }, i[r].l = 1 * new Date();
-		            a = s.createElement(o),
-		                m = s.getElementsByTagName(o)[0];
-		            a.async = 1;
-		            a.src = g;
-		            m.parentNode.insertBefore(a, m)
-		        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-		
-		        ga('create', 'UA-64440901-1', 'auto');
-		        ga('send', 'pageview');
-	</script>
-	<!-- maklachur -->
-	<title>Maklachur Rahman</title>
-	<link rel="icon" type= "image/jpg" href="images/maklachur.jpg">
-	<link rel="stylesheet" href="css/pure-min.css">
-	<link rel="stylesheet" href="css/grids-responsive-min.css">
-	<link rel="stylesheet" href="css/layouts/blog.css">
-	<style>
-		#profile_img {
-		            float: left;
-		            margin-right: 20px;
-		        }
-		        
-		        #profile_contents {
-		            margin-left: 10px;
-		            text-align: middle;
-		            font-family: "Times New Roman";
-		        }
-	</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Md Maklachur Rahman | PhD Student at Texas A&M University | Computer Vision, Medical Image Segmentation, Visual Object Tracking, and Efficient AI.">
+  <meta name="google-site-verification" content="Lmqh2f-424c1QVAwf0afKAPKTaukCi1gQfzIdEtBq0A">
+  <title>Maklachur Rahman</title>
+  <link rel="icon" type="image/jpg" href="images/maklachur.jpg">
+  <link rel="stylesheet" href="css/pure-min.css">
+  <link rel="stylesheet" href="css/grids-responsive-min.css">
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --panel: #ffffff;
+      --panel-soft: #f8fbff;
+      --text: #17212b;
+      --muted: #5f6b7a;
+      --line: #e2e8f0;
+      --primary: #163d6b;
+      --primary-strong: #0f2f53;
+      --accent: #0f766e;
+      --accent-soft: #ecfdf5;
+      --gold-soft: #fff8e8;
+      --shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+      --maxw: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(180deg, #f8fbff 0%, #f5f7fb 100%);
+      color: var(--text);
+      line-height: 1.68;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 18px 20px 56px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 16px;
+      padding: 14px 2px 14px;
+      margin-bottom: 22px;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.95);
+      background: rgba(245, 247, 251, 0.92);
+      backdrop-filter: blur(10px);
+    }
+
+    .topbar-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.94rem;
+    }
+
+    .topbar-links a {
+      color: #4b5a6b;
+      font-weight: 700;
+    }
+
+    .topbar-links a:hover {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 215px 1fr;
+      gap: 30px;
+      align-items: start;
+      margin-bottom: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero img.profile {
+      width: 100%;
+      max-width: 205px;
+      border-radius: 18px;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      display: block;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+    }
+
+    .profile-note {
+      margin-top: 12px;
+      max-width: 205px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #f8fbff;
+      font-size: 0.88rem;
+      line-height: 1.45;
+      color: #445365;
+      text-align: left;
+    }
+
+    .profile-note b {
+      color: #13283f;
+    }
+
+    .name {
+      margin: 0 0 8px;
+      font-size: 2.15rem;
+      line-height: 1.08;
+      color: #0f2237;
+    }
+
+    .role {
+      display: block;
+      margin-bottom: 6px;
+      color: #445365;
+      font-weight: 600;
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    .hero-meta {
+      color: var(--muted);
+      margin-bottom: 8px;
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    .focus-line {
+      font-size: 0.95rem;
+      color: #4f5f70;
+      letter-spacing: 0.01em;
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--line);
+      color: #223142;
+      font-weight: 700;
+      font-size: 0.93rem;
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+    }
+
+    .chip-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .chip-icon img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .chip:hover {
+      border-color: #c7d4e4;
+      background: #f9fbff;
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .hero p.bio {
+      margin: 16px 0 0;
+      color: #2a3441;
+      font-size: 1rem;
+      text-align: justify;
+    }
+
+    .news-list {
+      list-style: disc;
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .news-list li {
+      display: list-item;
+      padding: 5px 0;
+      border-bottom: 0;
+      align-items: initial;
+    }
+
+    .news-list li:last-child {
+      padding-bottom: 0;
+    }
+
+    .grid-news {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+      margin-bottom: 22px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      padding: 24px;
+      margin-bottom: 22px;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 1.46rem;
+      font-weight: 800;
+      font-style: normal;
+      color: #102033;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-link {
+      font-size: 0.93rem;
+      font-weight: 700;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    .section-subtitle {
+      display: inline-flex;
+      align-items: center;
+      margin: 22px 0 10px;
+      padding: 0.45rem 0.95rem;
+      border-radius: 999px;
+      font-size: 0.98rem;
+      font-weight: 800;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: 0.01em;
+    }
+
+    .current-subtitle {
+      color: #0f4c5c;
+      background: rgba(15, 76, 92, 0.10);
+      border: 1px solid rgba(15, 76, 92, 0.18);
+    }
+
+    .outcome-subtitle {
+      color: #8a5a00;
+      background: rgba(173, 118, 0, 0.10);
+      border: 1px solid rgba(173, 118, 0, 0.20);
+      margin-top: 26px;
+    }
+
+    .news-date {
+      display: inline;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: none;
+      color: #465567;
+      margin-right: 8px;
+    }
+
+    .news-text {
+      display: inline;
+      color: #24303c;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .edu-item,
+    .award-item {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #edf1f5;
+    }
+
+    .edu-item:last-child,
+    .award-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .exp-item {
+      margin-bottom: 14px;
+      padding: 0 0 14px;
+      border-bottom: 1px solid #edf1f5;
+    }
+
+    .exp-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .exp-role {
+      font-size: 0.99rem;
+      font-weight: 800;
+      color: #13283f;
+      margin-bottom: 2px;
+      line-height: 1.4;
+    }
+
+    .exp-place {
+      font-size: 0.95rem;
+      color: #324152;
+      font-weight: 600;
+      margin-bottom: 2px;
+      line-height: 1.45;
+    }
+
+    .exp-time {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0;
+      line-height: 1.4;
+    }
+
+    .item-title {
+      font-weight: 800;
+      color: #17293b;
+      line-height: 1.35;
+    }
+
+    .item-meta {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .item-note {
+      color: #324152;
+      margin-top: 3px;
+      font-size: 0.93rem;
+      line-height: 1.5;
+    }
+
+    .edu-meta {
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.45;
+      margin-top: 2px;
+    }
+
+    .edu-note {
+      color: #324152;
+      margin-top: 4px;
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .edu-highlight {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      vertical-align: middle;
+      background: var(--gold-soft);
+      border: 1px solid #f1dea0;
+      color: #8a6116;
+    }
+
+    .pub-card {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 20px;
+      padding: 0 0 24px;
+      border: 0;
+      border-bottom: 1px solid #e9eef4;
+      border-radius: 0;
+      background: transparent;
+      margin-bottom: 24px;
+    }
+
+    .pub-media {
+      position: relative;
+      align-self: start;
+    }
+
+    .pub-thumb {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: #f3f6fa;
+      display: block;
+    }
+
+    .venue-highlight {
+      display: inline-block;
+      margin-left: 10px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      vertical-align: middle;
+      background: #eef5ff;
+      border: 1px solid #dbe7f6;
+      color: var(--primary);
+    }
+
+    .venue-highlight.gold {
+      background: var(--gold-soft);
+      border-color: #f1dea0;
+      color: #8a6116;
+    }
+
+    .venue-highlight.red {
+      background: #fef2f2;
+      border-color: #fecaca;
+      color: #b91c1c;
+    }
+
+    .pub-top {
+      margin-bottom: 6px;
+    }
+
+    .pub-title {
+      margin: 0;
+      font-size: 1.02rem;
+      color: #13283f;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .pub-authors {
+      margin: 0 0 6px;
+      color: #334152;
+      font-size: 1rem;
+      line-height: 1.55;
+    }
+
+    .pub-venue-line {
+      margin: 0 0 4px;
+      color: #445365;
+      font-size: 0.98rem;
+      line-height: 1.5;
+    }
+
+    .pub-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 0;
+    }
+
+    .pub-links a {
+      display: inline-block;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: #748496;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .pub-links a::before { content: "["; }
+    .pub-links a::after { content: "]"; }
+
+    .pub-links a:hover {
+      text-decoration: none;
+      color: var(--primary);
+    }
+
+    .simple-list {
+      list-style: disc;
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .simple-list li {
+      padding: 5px 0;
+      color: #24303c;
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    .mentor-list {
+      list-style: disc;
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .mentor-list li {
+      padding: 6px 0;
+      color: #24303c;
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    .mentor-list.compact {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .mentor-list.compact > li {
+      padding: 12px 14px;
+      border: 1px solid #e8edf4;
+      border-radius: 12px;
+      background: #fbfcfe;
+      margin-bottom: 10px;
+    }
+
+    .mentor-list.compact > li:last-child {
+      margin-bottom: 0;
+    }
+
+    .sub-list {
+      margin: 6px 0 0;
+      padding-left: 22px;
+    }
+
+    .sub-list li {
+      padding: 2px 0;
+      font-size: 0.93rem;
+      line-height: 1.5;
+      color: #334152;
+    }
+
+    .mentoring-topic {
+      margin-top: 5px;
+      font-size: 0.93rem;
+      line-height: 1.5;
+      color: #334152;
+    }
+
+    .mentoring-topic b {
+      color: #13283f;
+    }
+
+    .group-block {
+      margin-top: 10px;
+      padding: 8px 10px;
+      border-left: 3px solid #d8e4f2;
+      background: #ffffff;
+      border-radius: 8px;
+    }
+
+    .group-title {
+      font-size: 0.93rem;
+      line-height: 1.5;
+      color: #13283f;
+      font-weight: 700;
+    }
+
+    .group-students {
+      font-size: 0.92rem;
+      line-height: 1.5;
+      color: #445365;
+      margin-top: 3px;
+      padding-left: 0;
+    }
+
+    .mentoring-note {
+      color: #5f6b7a;
+      font-size: 0.93rem;
+      margin: -2px 0 12px;
+      line-height: 1.5;
+    }
+
+    .outcome-note {
+      color: #5f6b7a;
+      font-size: 0.92rem;
+      margin: -2px 0 12px;
+      line-height: 1.5;
+    }
+
+    #mentoring .mentor-list.compact,
+    #mentoring .outcome-list {
+      margin-top: 0.9rem;
+      padding: 0;
+      border-left: 0;
+      background: transparent;
+      border-radius: 0;
+    }
+
+    #mentoring .mentor-list.compact > li,
+    #mentoring .outcome-list > li {
+      padding: 12px 14px;
+      border: 1px solid #e8edf4;
+      border-radius: 12px;
+      background: #fbfcfe;
+      margin-bottom: 10px;
+    }
+
+    #mentoring .mentor-list.compact > li:last-child,
+    #mentoring .outcome-list > li:last-child {
+      margin-bottom: 0;
+    }
+
+    .outcome-list .sub-list a {
+      color: #5f67d8;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(95, 103, 216, 0.28);
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .outcome-list .sub-list a:hover {
+      color: #434bb8;
+      border-bottom-color: rgba(67, 75, 184, 0.45);
+      text-decoration: none;
+    }
+
+    .outcome-list .sub-list li {
+      margin-bottom: 0.45rem;
+      line-height: 1.6;
+    }
+
+    .service-block {
+      color: #24303c;
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    .service-row {
+      margin-bottom: 10px;
+    }
+
+    .service-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .service-label {
+      font-weight: 800;
+      color: #13283f;
+      margin-right: 8px;
+    }
+
+    .muted-note {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 12px;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .pub-card {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar {
+        justify-content: flex-start;
+      }
+
+      .hero img.profile {
+        max-width: 180px;
+      }
+
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 12px 14px 40px;
+      }
+
+      .hero,
+      .panel {
+        padding: 18px;
+      }
+
+      .name {
+        font-size: 1.82rem;
+      }
+
+      .pub-thumb {
+        height: 184px;
+      }
+    }
+  </style>
 </head>
-
 <body>
-	<div id="layout" class="pure-g">
-		<div class="content pure-u">
-			<div>
+  <div class="container">
 
-				<div class="post-description">
-					<div id="profile_img">
-						<img src="maklachur.jpg" height="200px">
-					</div>
-					<div id="profile_contents" class="post-description">
-						<p> 				<header class="post-header">
-						<h2 class="post-title">Md Maklachur Rahman</h2></header>
-						<b>PhD Student <br /> </b>
-<!-- 							<a href="https://srltamu.com" target="_blank">Sketch Recognition Lab (SRL)</a> -->
-							<a href="https://www.tamu.edu/" target="_blank">Texas A&M University (TAMU)</a>
-							<br />Email: <a href="mailto:maklachur@gmail.com" target="_blank">maklachur [at] gmail [dot] com</a> OR <a href="mailto:maklachur@tamu.edu" target="_blank">maklachur [at] tamu [dot] edu</a>
-				<!--			
-							<br />							
-							<br /> 
-			    <b>
-			     <a href="https://github.com/maklachur/maklachur.github.io/blob/master/docs/Resume_Maklachur%20Rahman.pdf"target="_blank">CV</a>/<a href="https://scholar.google.com/citations?user=l1uvg8cAAAAJ&hl=en"target="_blank">Google Scholar</a>/<a href="https://github.com/maklachur"target="_blank">Github</a><br /> 
-			    </b>
-				-->
-						<b>	
-						<div class="row">
-							 
-							<a href="https://github.com/maklachur/maklachur.github.io/blob/master/docs/CV_Maklachur%20Rahman.pdf"target="_blank">
-							<img border="0" alt="resume" src="./images/resume_logo.png" width="30" height="20"/></a>
+    <nav class="topbar">
+      <div class="topbar-links">
+        <a href="#about">About</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="#education">Education</a>
+		<a href="#experience">Experience</a>
+        <a href="#mentoring">Mentoring</a>
+        <a href="#awards">Awards</a>
+      </div>
+    </nav>
 
-							<a href="https://www.linkedin.com/in/maklachur-rahman"target="_blank"/>
-							<img border="0" alt="linkedin" src="./images/linkedin_logo.png" width="30" height="30"/></a>
-							
-							<a href="https://www.researchgate.net/profile/Md_Maklachur_Rahman"target="_blank">
-							<img border="0" alt="github" src="./images/researchgate_logo.png" width="30" height="30"/></a>
+    <section class="hero" id="about">
+      <div>
+        <img src="maklachur.jpg" alt="Maklachur Rahman" class="profile">
+        <div class="profile-note"><b>Looking for:</b> Internships or Full-time opportunities and research collaborations in medical imaging, computer vision, and multimodal AI.</div>
+      </div>
+      <div>
+        <h1 class="name">Md Maklachur Rahman</h1>
+        <div class="role">PhD Student in Computer Science</div>
+        <div class="role">Texas A&amp;M University, College Station, TX, USA</div>
+        <div class="hero-meta focus-line">Medical Image Segmentation &middot; Computer Vision &middot; Efficient and Lightweight AI &middot; VLM &middot; Multimodal AI</div>
 
-							<a href="https://github.com/maklachur"target="_blank">
-							<img border="0" alt="github" src="./images/github_logo.png" width="30" height="30"/></a>
+        <div class="hero-meta">
+          Email:
+          <a href="mailto:maklachur@tamu.edu">maklachur [at] tamu [dot] edu</a>
+          &nbsp;|&nbsp;
+          <a href="mailto:maklachur@gmail.com">maklachur [at] gmail [dot] com</a>
+        </div>
 
-							<a href="https://scholar.google.com/citations?user=l1uvg8cAAAAJ&hl=en"target="_blank"/>
-							<img border="0" alt="google_scholar" src="./images/google_scholar.jpg" width="30" height="30"/></a>
+        <div class="hero-links">
+          <a class="chip" href="https://github.com/maklachur/maklachur.github.io/blob/master/docs/CV_Maklachur%20Rahman.pdf" target="_blank"><span class="chip-icon">&#128196;</span><span>CV</span></a>
+          <a class="chip" href="https://scholar.google.com/citations?user=l1uvg8cAAAAJ&amp;hl=en" target="_blank"><span class="chip-icon"><img src="./images/google_scholar.jpg" alt="Google Scholar"></span><span>Google Scholar</span></a>
+          <a class="chip" href="https://github.com/maklachur" target="_blank"><span class="chip-icon"><img src="./images/github_logo.png" alt="GitHub"></span><span>GitHub</span></a>
+          <a class="chip" href="https://www.linkedin.com/in/maklachur-rahman" target="_blank"><span class="chip-icon"><img src="./images/linkedin_logo.png" alt="LinkedIn"></span><span>LinkedIn</span></a>
+          <a class="chip" href="https://www.researchgate.net/profile/Md_Maklachur_Rahman" target="_blank"><span class="chip-icon"><img src="./images/researchgate_logo.png" alt="ResearchGate"></span><span>ResearchGate</span></a>
+        </div>
 
-						</div> 	
-						</b>
-						</p>	
-				
-					<p style="text-align:justify">I am Md Maklachur Rahman, a CS PhD student at TAMU, College Station, USA. Before joining to PhD, I worked as a Researcher for CSET and primarily for <a href="https://sites.google.com/view/knuvrlab" target="_blank">Virtual Reality Lab (VR Lab)</a> at the <a href="http://computer.knu.ac.kr/eng/main/index.html" target="_blank">School of Computer Science and Engineering</a> <a href="https://en.knu.ac.kr/main/main.htm" target="_blank">at Kyungpook National University (KNU)</a>. I completed my MS under VR Lab as a Research Assistant. Formerly, I worked as a Software Engineer at <a href="https://research.samsung.com/srbd" target="_blank">Samsung R&D Institute Bangladesh</a> for about three years. However, I have completed undergraduate studies at the <a href="https://www.cuet.ac.bd/dept/cse" target="_blank">Department of Computer Science and Engineering</a> at <a href="https://www.cuet.ac.bd/" target="_blank">Chittagong University of Engineering & Technology (CUET)</a>. I am always enthralled by computer science fundamentals and am interested in using deep learning frameworks to solve computer vision problems to improve the quality of life. My research focuses on developing real-time Visual Object Tracking frameworks with potential applications in autonomous vehicles, intelligent surveillance, augmented reality, and medical image analysis. Additionally, I am also involved in developing a community tool that uses machine learning-based Semantic Segmentation for labeling outcrop images. Ultimately, this tool aims to expose geoscience students to computer science and help them explore new geological environments, such as Mars.</p>
-					</div>
-					
-				</div>
-				<header class="post-header">
-					<h2 class="post-title">Education</h2>
-				</header>
-				<div class="post-description">
-					<p>
-						<ul>
-							<li> 
-							 <b>PhD</b>, <a href="https://engineering.tamu.edu/cse/index.html" target="_blank">Department of Computer Science and Engineering</a>, <a href="https://www.tamu.edu/" target="_blank">Texas A&M University, USA</a> (January 2022 - Present)</li>
-							 <span style="padding-left: 20px;"><b>Qualifying Exam: </b> Passed with 99th Percentile [<a href="https://github.com/maklachur/maklachur.github.io/blob/master/docs/mft.pdf" target="_blank">link</a>]<br/>
-<!-- 							 <span style="padding-left: 20px;"><b>Supervisor: </b> Dr. Tracy Hammond <br/> -->
+        <p class="bio">
+          I am a PhD student in Computer Science at
+          <a href="https://www.tamu.edu/" target="_blank">Texas A&amp;M University</a>. My research focuses on medical image segmentation, computer vision, efficient and lightweight AI, vision-language models, and multimodal AI. I am interested in building efficient and lightweight AI systems for medical image analysis, computer vision, and broader multimodal learning. Before joining Texas A&amp;M, I worked as a researcher at <a href="https://en.knu.ac.kr/main/main.htm" target="_blank">Kyungpook National University</a>, South Korea, and as a Software Engineer at <a href="https://research.samsung.com/srbd" target="_blank">Samsung Research Bangladesh</a>.
+        </p>
+      </div>
+    </section>
 
-							<li> 
-							 <b>MS</b>, <a href="http://computer.knu.ac.kr/eng/main/index.html" target="_blank">School of Computer Science and Engineering</a>, <a href="https://en.knu.ac.kr/main/main.htm" target="_blank">Kyungpook National University, South Korea</a> (September 2018 - August 2020)</li>
-							 <span style="padding-left: 20px;"><b>Thesis: </b> <a href="http://dcollection.knu.ac.kr/srch/srchDetail/000000097661" target="_blank">Siamese Stacked Channel-Spatial Attention Learning for Visual Tracking</a><br/>
-							 <span style="padding-left: 20px;"><b>Supervisor: </b> Dr. Soon Ki Jung<br/>
-							 <span style="padding-left: 20px;"><b>Award</b>: <a href="https://github.com/maklachur/maklachur.github.io/blob/master/docs/MS_CSE_THESIS_AWARD.pdf" target="_blank">Outstanding Thesis Award</a><br/>
-							 
-							<li> <b>BS</b>, <a href="http://cse.cuet.ac.bd/" target="_blank">Department of Computer Science and Engineering</a>, <a href="https://www.cuet.ac.bd/" target="_blank">Chittagong University of Engineering & Technology, Bangladesh</a> (March 2009 - September 2013)</li>
-							 <span style="padding-left: 20px;"><b>Merit Position</b>: 7th (out of 58)<br/>
-							 <span style="padding-left: 20px;"><b>Thesis: </b> Digital Watermarking for Image Authentication Based on Combined DCT, DWT and SVD Transformation<br/>
-							 <span style="padding-left: 20px;"><b>Supervisor: </b> Dr. Muhammad Ibrahim Khan
-						</ul>
-					</p>
-				</div>
-			</div>
-			<header class="post-header">
-				<h2 class="post-title">Research Experience</h2>
-			</header>
-			<div class="post-description">
-				<p>
-					<ul>
-						<li> <b>Graduate Research Assistant</b>, Sketch Recognition Lab at TAMU (January 2022 - Present)</li>
-						<li> <b>Researcher</b>, <a href="https://en.knu.ac.kr/research/lab03.htm" target="_blank">Center for Embedded Software Technology</a> at KNU (September 2021 - December 2021)</li>
-						<li> <b>Researcher</b>, <a href="https://sites.google.com/view/knuvrlab" target="_blank">Virtual Reality Laboratory</a> at KNU (September 2020 - August 2021)</li>
-						<li> <b>Research Assistant</b>, <a href="https://sites.google.com/view/knuvrlab" target="_blank">Virtual Reality Laboratory</a> at KNU (August 2018 - August 2020)</li>
-					</ul>
-				</p>
-			</div>
-			<header class="post-header">
-				<h2 class="post-title">Industry Experience</h2>
-			</header>
-			<div class="post-description">
-				<p>
-					<ul>
-						<li> <b>Software Engineer</b>, <a href="https://research.samsung.com/srbd" target="_blank">Samsung R&D Institute Bangladesh</a> (October 2013 - July 2016)</li>
-						<li> <b>Industrial Attachment Training</b>, <a href="https://www.linkedin.com/company/sentinel-solutions-ltd" target="_blank">Sentinel Solutions Ltd. Dhaka, Bangladesh</a> (November 2012 - December 2012)</li>
-					</ul>
-				</p>
-			</div>
-			<header class="post-header">
-				<h2 class="post-title">Publications</h2>
-			</header>
-			<div class="post-description">
-				<p>
-			<table>
-    <tr>
-        <td>
-            <img src="./images/AAAI24-DC.PNG" alt="AAAI24-DC" class="image left" width="250px" />
-        </td>
-        <td>
-            <div class="media">
-                <div class="media-body">
-                    <ul>
-                        <li>
-                            <b>Target Focused Shallow Transformer Framework for Efficient Visual Tracking</b> [<b>Accepted</b>] <br />
-                            <b>Md Maklachur Rahman</b> <br />
-                            <a href="https://aaai.org/aaai-conference/doctoral-consortium-call-for-proposals/" target="_blank">The 38th Annual AAAI Conference on Artificial Intelligence, Vancouver, Canada - AAAI 24 (Doctoral Consortium)</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </td>
-    </tr>
-</table>
+    <div class="grid-news">
+      <section class="panel" id="news">
+        <div class="section-head">
+          <h2 class="section-title">News</h2>
+        </div>
+		<ul class="news-list">
+		  <li><div class="news-date">Mar 2026</div><div class="news-text">&#128221; <b>IJCV:</b> The invited extended journal version of AULUNet has been submitted and is currently under review.</div></li>
+		  <li><div class="news-date">Feb 2026</div><div class="news-text">&#128221; <b>MICCAI 2026:</b> Submitted two papers focusing on diffusion models and vision-language models.</div></li>
+		  <li><div class="news-date">Feb 2026</div><div class="news-text">&#127881; <b>CVPR 2026 (Main):</b> MambaLiteUNet: Cross-Gated Adaptive Feature Fusion for Robust Skin Lesion Segmentation was accepted.</div></li>
+		  <li><div class="news-date">Nov 2025</div><div class="news-text">&#127881; Selected as <b>Outstanding Reviewer</b> for <b>BMVC 2025.</b></div></li>
+		  <li><div class="news-date">Nov 2025</div><div class="news-text">&#9992;&#65039; Attended <b>BMVC 2025</b> in Sheffield, UK, and presented our work.</div></li>
+		  <li><div class="news-date">Sep 2025</div><div class="news-text">&#127881; <b>BMVC 2025 (Main):</b> AULUNet: An Adaptive Ultra-Lightweight UNet Framework for Efficient Skin Lesion Segmentation in Resource-Constrained Environments was accepted for <b>Oral Presentation (Top 3.47%)</b>.</div></li>
+		  <li><div class="news-date">Oct 2024</div><div class="news-text">&#128221; arXiv version available for Mamba in Vision: A Comprehensive Survey of Techniques and Applications.</div></li>
+		  <li><div class="news-date">Jan 2024</div><div class="news-text">&#127881; <b>Received AAAI 2024 Travel Award.</b></div></li>
+		  <li><div class="news-date">Oct 2023</div><div class="news-text"><b>AAAI 2024 Student Abstract and Poster Program:</b> Learning Random Noise Salient Feature Fusion Siamese Network for Low-Resolution Object Tracking was accepted.</div></li>
+		  <li><div class="news-date">Oct 2023</div><div class="news-text"><b>AAAI 2024 Doctoral Consortium:</b> Target Focused Shallow Transformer Framework for Efficient Visual Tracking was accepted.</div></li>
+		</ul>
+      </section>
+    </div>
 
-<table>
-    <tr>
-        <td>
-            <img src="./images/AAAI24-SA.PNG" alt="AAAI24-SA" class="image left" width="250px" />
-        </td>
-        <td>
-            <div class="media">
-                <div class="media-body">
-                    <ul>
-                        <li>
-                            <b>Learning Random Noise Salient Feature Fusion Siamese Network for Low-Resolution Object Tracking</b> [<b>Accepted</b>] <br />
-                            <b>Md Maklachur Rahman</b> and Tracy Hammond <br />
-                            <a href="https://aaai.org/aaai-conference/student-abstract-and-poster-program-call-for-proposals/" target="_blank">
-                                The 38th Annual AAAI Conference on Artificial Intelligence, Vancouver, Canada - AAAI 24 (Student Abstract and Poster Program)
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </td>
-    </tr>
-</table>
+    <section class="panel" id="publications">
+      <div class="section-head">
+        <h2 class="section-title">Selected Publications</h2>
+        <a class="section-link" href="https://scholar.google.com/citations?user=l1uvg8cAAAAJ&amp;hl=en" target="_blank">See full publication list</a>
+      </div>
 
-<table>
-    <tr>
-        <td>
-            <img src="./images/book_chapter1.JPG" alt="book_chapter1" class="image left" width="250px" />
-        </td>
-        <td>
-            <div class="media">
-                <div class="media-body">
-                    <ul>
-                        <li>
-                            <b>Chapter Title: Siamese-based Attention Learning Networks for Robust Visual Object Tracking</b> [Book Chapter] <br />
-                            <b>Md Maklachur Rahman</b> and Soon Ki Jung <br />
-                            <b>Book title:</b> Visual Object Tracking <a href="https://www.intechopen.com/online-first/80109" target="_blank">[IntechOpen_download]</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </td>
-    </tr>
-</table>
+      <div class="pub-card">
+        <div class="pub-media"><img class="pub-thumb" src="./images/cvpr2026_mambaliteunet.png" alt="CVPR 2026 MambaLiteUNet thumbnail"></div>
+        <div>
+          <div class="pub-top"><h3 class="pub-title">MambaLiteUNet: Cross-Gated Adaptive Feature Fusion for Robust Skin Lesion Segmentation</h3></div>
+          <p class="pub-authors"><b>Md Maklachur Rahman</b>, Soon Ki Jung, Tracy Hammond</p>
+          <p class="pub-venue-line">CVPR 2026</p>
+          <div class="pub-links"><a href="#">Paper</a><a href="https://github.com/maklachur/MambaLiteUNet" target="_blank">Code</a></div>
+        </div>
+      </div>
 
-<table>
-    <tr>
-        <td>
-            <img src="./images/deepfake_iwfcv2021.JPG" alt="deepfake_iwfcv2021" class="image left" width="250px" />
-        </td>
-        <td>
-            <div class="media">
-                <div class="media-body">
-                    <ul>
-                        <li>
-                            <b>Challenges and Applications of Face Deepfake</b> [Conference][<b>Oral Presentation</b>] [<b>Citation: 5</b>] <br />
-                            Lamyanba Laishram, <b>Md Maklachur Rahman</b>, and Soon Ki Jung <br />
-                            <a href="https://sites.google.com/view/iwfcv2021" target="_blank">The 27th International Workshop on Frontiers of Computer Vision (IW-FCV2021), South Korea</a>
-                            <a href="https://link.springer.com/chapter/10.1007/978-3-030-81638-4_11" target="_blank">[In Springer]</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </td>
-    </tr>
-</table>
+      <div class="pub-card">
+        <div class="pub-media"><img class="pub-thumb" src="./images/bmvc2025_aulunet.png" alt="BMVC 2025 AULUNet thumbnail"></div>
+        <div>
+          <div class="pub-top"><h3 class="pub-title">AULUNet: An Adaptive Ultra-Lightweight UNet Framework for Efficient Skin Lesion Segmentation in Resource-Constrained Environments</h3></div>
+          <p class="pub-authors"><b>Md Maklachur Rahman</b>, Soon Ki Jung, Tracy Hammond</p>
+          <p class="pub-venue-line">BMVC 2025 <span class="venue-highlight red">Oral - Top 3.47%</span></p>
+          <div class="pub-links"><a href="https://bmvc2025.bmva.org/proceedings/1199/" target="_blank">Paper</a><a href="https://github.com/maklachur/AULUNet" target="_blank">Code</a></div>
+        </div>
+      </div>
 
-					<table>
-						<tr>
-							<td>
-								<img src="./images/SiamFRN_arch.JPG" alt="SiamFRN" class="image left" width="250px" />
-							</td>
-							<td>
-								<div class="media">
-									<div class="media-body">
-										<ul>
-											<li> <a href="https://www.mdpi.com/2079-9292/9/11/1918/htm" target="_blank"><b>Siamese High-Level Feature Refine Network for Visual Object Tracking</b></a> (<b> SCIE </b>)[<b> IF: 2.69</b>] [<b>Citation: 8</b>]
-												<br/> <b>Md Maklachur Rahman</b>, Md Rishad Ahmed, Lamyanba Laishram, Seock Ho Kim and Soon Ki Jung
-												<br />	<a href="https://www.mdpi.com/journal/electronics" target="_blank">Electronics</a> Vol.9, No.11, pp.1918-, ISSN. 20799292, Year: 2020. <a href="https://www.mdpi.com/2079-9292/9/11/1918/htm" target="_blank">[Paper]</a> [<a href="https://github.com/maklachur/SiamFRN" target="_blank">Code</a>]
-											</li>
-										</ul>
-									</div>
-								</div>
-							</td>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td>
-								<img src="./images/SCSAtt.JPG" alt="SCSAtt" class="image left" width="250px" />
-							</td>
-							<td>
-								<div class="media">
-									<div class="media-body">
-										<ul>
-											<li> <a href="https://ieeexplore.ieee.org/abstract/document/9102303" target="_blank"><b>Efficient Visual Tracking with Stacked Channel-Spatial Attention Learning </b></a>(<b> SCIE </b>)[<b> Q1, IF: 3.367</b>][<b>Citation: 21</b>]
-												<br /> <b>Md Maklachur Rahman</b>, Mustansar Fiaz, and Soon Ki Jung
-												<br />	<a href="https://ieeeaccess.ieee.org" target="_blank">IEEE Access</a>, Volume: 8, Issue:1, Page: 100857-100869, DOI: 10.1109/ACCESS.2020.2997917, Year: 2020. <a href="https://ieeexplore.ieee.org/abstract/document/9102303" target="_blank">[Paper]</a> [<a href="https://github.com/maklachur/SCSAtt" target="_blank">Code</a>]
-											</li>
-										</ul>
-									</div>
-								</div>
-							</td>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td>
-								<img src="./images/afs_tracker.JPG" alt="afs_tracker" class="image left" width="250px" />
-							</td>
-							<td>
-								<div class="media">
-									<div class="media-body">
-										<ul>
-											<li> <a href="https://link.springer.com/chapter/10.1007%2F978-981-15-4818-5_13" target="_blank"><b>Adaptive Feature Selection Siamese Networks for Visual Tracking </b></a>[<b>Best Student Paper Award</b>][Conference][<b>Oral Presentation</b>][<b>Citation: 8</b>]
-												<br />Mustansar Fiaz, <b>Md Maklachur Rahman</b>, Arif Mahmood, Sehar Shahzad Farooq, Ki Yeol Baek and Soon Ki Jung
-												<br /> <a href="http://www.cvg.ait.kyushu-u.ac.jp/FCV2020/" target="_blank">The 26th International Workshop on Frontiers of Computer Vision (IW-FCV2020), Japan</a> [<a href="https://link.springer.com/chapter/10.1007%2F978-981-15-4818-5_13" target="_blank"><b>In Springer</b></a>] [<a href="https://github.com/mustansarfiaz/AFS-Siam" target="_blank">Code</a>]
-											</li>
-										</ul>
-									</div>
-								</div>
-							</td>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td>
-								<img src="./images/secure_model.JPG" alt="secure_model" class="image left" width="250px" />
-							</td>
-							<td>
-								<div class="media">
-									<div class="media-body">
-										<ul>
-											<li> <a href="http://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07613812" target="_blank"><b>Modeling a secure image authentication with a robust hybrid watermarking approach</b></a> [Conference][<b>Oral Presentation</b>]
-												<br /> <b>Md Maklachur Rahman</b>, Soon Ki Jung
-												<br /> <a href="http://www.kiise.or.kr/academyEng/main/main.faEng" target="_blank">The Korean Institute of Information Scientists and Engineers (한국정보과학회 학술발표논문집)</a>, <a href="http://www.kiise.or.kr/conference/KSC/2018/" target="_blank">Korea Software Congress 2018</a> [<a href="http://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07613812" target="_blank">Paper</a>]</li>
-										</ul>
-									</div>
-								</div>
-							</td>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td>
-								<img src="./images/semi_blind.JPG" alt="semi_blind" class="image left" width="250px" />
-							</td>
-							<td>
-								<div class="media">
-									<div class="media-body">
-										<ul>
-											<li> <a href="https://globaljournals.org/item/6503-a-semi-blind-watermarking-technique-for-copyright-protection-of-image-based-on-dct-and-svd-domain" target="_blank"><b>A Semi-Blind Watermarking Technique for Copyright Protection of Image Based on DCT and SVD Domain</b></a> [<b>Citation: 20</b>]
-												<br /> <b>Md Maklachur Rahman</b>, Md Shale Ahmmed, Md Rishad Ahmed, Mohammed Navid Izhar
-												<br /> <a href="https://globaljournals.org/journals/engineering-research-journal" target="_blank">Global Journal of Researches in Engineering</a>, GJRE-F Volume 16 Issue 7 Version 1.0. December 2016. [<a href="https://globaljournals.org/GJRE_Volume16/2-A-Semi-Blind-Watermarking.pdf" target="_blank">Paper</a>]</li>
-										</ul>
-									</div>
-								</div>
-							</td>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td>
-								<img src="./images/piracy.JPG" alt="piracy" class="image left" width="250px" />
-							</td>
-							<td>
-								<div class="media">
-									<div class="media-body">
-										<ul>
-											<li> <a href="https://arxiv.org/abs/1307.3294" target="_blank"><b>A DWT, DCT and SVD Based Watermarking Technique to Protect the Image Piracy</b></a> [<b>Citation: 71</b>]
-												<br /> <b>Md Maklachur Rahman</b>
-												<br /> <a href="http://airccse.org/journal/mpict/papers/4213ijmpict03.pdf" target="_blank">International Journal of Managing Public Sector Information and Communication Technologies</a>, Vol. 4, No. 2, June 2013, pp 21-32. DOI: 10.5121/ijmpict.2013.4203</li>
-										</ul>
-									</div>
-								</div>
-							</td>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td>
-								<img src="./images/combined_4.JPG" alt="combined_4" class="image left" width="250px" />
-							</td>
-							<td>
-								<div class="media">
-									<div class="media-body">
-										<ul>
-											<li> <a href="https://arxiv.org/abs/1307.6328" target="_blank"><b>Digital Watermarking for Image Authentication Based on Combined DCT, DWT and SVD Transformation</b></a> [<b>Citation: 63</b>]
-												<br />Mohammad Ibrahim Khan, <b>Md Maklachur Rahman</b>, and Md Iqbal Hasan Sarker
-												<br /> <a href="https://www.ijcsi.org/articles/Digital-watermarking-for-image-authentication-based-on-combined-dct-dwt-and-svd-transformation.php" target="_blank">International Journal of Computer Science Issues</a>, Vol. 10, Issue 3, No 1, May 2013, pp - 223-230.</li>
-										</ul>
-									</div>
-								</div>
-							</td>
-						</tr>
-					</table>
-				</p>
-			</div>
-			<header class="post-header">
-				<h2 class="post-title">Projects(Selected)</h2>
-			</header>
-			<div class="post-description">
-				<p>
-					<ul>
-						<!-- <li><a href="https://colab.research.google.com/drive/1gJRgZDKroIpNO6ooouAfMYNhqZcSOKPZ" target="_blank">Deep learning technique for skin lesion segmentation</a>
-						</li> -->
-						<li>Siamese network for single object tracking</li>
-						<span style="padding-left: 20px;"><b>Language or Tools:</b> Python, PyTorch
-						<li>LSTM network for visual object tracking</li>
-						<span style="padding-left: 20px;"><b>Language or Tools:</b> Python, TensorFlow
-						<li>SWC/DMC Project Test Suite and IoT Test FW Development</li>
-						<span style="padding-left: 20px;"><b>Language or Tools:</b> C, C++, and Java
-						<li>Tizen IDE Verification and Automation</li>
-						<span style="padding-left: 20px;"><b>Language or Tools:</b> C, C++, and Java
-						<li>Digital image watermarking using multiple transformation model</li>
-						<span style="padding-left: 20px;"><b>Language or Tools:</b> Matlab
-						<li>Multi-portion Image Encryption using RSA Algorithm</li>
-						<span style="padding-left: 20px;"><b>Language or Tools:</b> Matlab
-						<li>Location Based Reminder System Using GPS</li>
-						<span style="padding-left: 20px;"><b>Language or Tools:</b> Android, Google map
-						<li>Mobile Phone Booth Customer Care Management Simulator</li>
-						<span style="padding-left: 20px;"><b>Language or Tools:</b> Java, Oracle
-						<!--
-						<li>Location Based Reminder System Using GPS</li>
-						<li>Chess Player Design using Artificial Intelligence</li>
-						<li>Mobile Phone Booth Customer Care Management Simulator</li>
-						<li>Bank Management System Analysis and Design of Sonali Bank Ltd. CUET Branch (Account Section)</li>
-						<li>Online Digital Hall Management System</li>
-						<li>Hospital Management System</li> -->
-					</ul>
-				</p>
-			</div>
-			<header class="post-header">
-				<h2 class="post-title">Research Interests</h2>
-			</header>
-			<div class="post-description">
-				<p>
-					<ul>
-					    <li>Visual Object Tracking and Segmentation</li>
-					    <li>Computer Vision</li>
-					    <li>Machine Learning</li>
-					    <li>Deep Learning</li>
-					    <li>Visual Question Answering</li>
-					    <li>Activity Recognition and Localization</li>
-					    <li>Scene Understanding and Generation</li>
-					    <li>Multi-Modal AI</li>
-					    <li>Medical Image Analysis and Segmentation</li>
-					</ul>
-				</p>
-			</div>
-			<header class="post-header">
-				<h2 class="post-title">Awards and Scholarships</h2>
-			</header>
-			<div class="post-description">
-				<p>
-					<ul>
-						<li><b>AAAI Travel Award</b>, 38th AAAI 24, Vancouver, Canada</li>
-						<li><b>CSE THESIS AWARD-2020</b>, [<b>Master's Thesis</b>], Kyungpook National University, South Korea [Prize Money: <b>750000 KRW</b>] [<a href="https://github.com/maklachur/maklachur.github.io/blob/master/docs/MS_CSE_THESIS_AWARD.pdf" target="_blank">Certificate</a>]</li> 
-						<li><b>Best Student Paper Award</b>, 26th IW-FCV2020, Japan [<a href="https://github.com/maklachur/maklachur.github.io/blob/master/docs/IW-FCV_Best_Student_Paper_Award.png" target="_blank">Certificate</a>]</li>
-						<li><b>Brain Korea (BK) 21 PLUS Scholarship</b>, Duration: Sept. 2018 – Aug. 2020, South Korea</li>
-						<li><b>KNU International Graduate Scholarship (KINGS) [Full]</b>, Duration: Sept. 2018 – Aug. 2020, South Korea</li>
-						<li><b>University Merit Scholarship</b>, Duration: Mar. 2009 - Sept. 2013, CUET, Bangladesh</li>
-					</ul>
-				</p>
-			</div>
-			<header class="post-header">
-				<h2 class="post-title">Journal and Conference Reviewer</h2>
-			</header>
-			<div class="post-description">
-				<p>
-					<ul>
-						<li>Neurocomputing [Journal]</li>
-						<li>Pattern Recognition Letters [Journal]</li>
-						<li>EEE Access [Journal]</li>
-						<li>MDPI: Electronics, Entropy [Journal] </li>
-						<li>Displays [Journal]</li>
-						<li>Computers in Human Behavior [Journal] </li>
-						<li>Pattern Recognition [Journal]</li>
-						<li>Graphics Interface 2023 Conference</li>
-						
-					</ul>
-				</p>
-			</div>
-		</div>
-	</div>
-	</div>
-	</div>
-	</br>
-</body>
+      <div class="pub-card">
+        <div class="pub-media"><img class="pub-thumb" src="./images/mamba_in_vision.png" alt="Mamba in Vision thumbnail"></div>
+        <div>
+          <div class="pub-top"><h3 class="pub-title">Mamba in Vision: A Comprehensive Survey of Techniques and Applications</h3></div>
+          <p class="pub-authors"><b>Md Maklachur Rahman</b>, Abdullah Aman Tutul, Ankur Nath, Lamyanba Laishram, Soon Ki Jung, Tracy Hammond</p>
+          <p class="pub-venue-line">Review Paper</p>
+          <div class="pub-links"><a href="https://arxiv.org/abs/2410.03105" target="_blank">Paper</a><a href="https://github.com/maklachur/Mamba-in-Computer-Vision" target="_blank">Project</a></div>
+        </div>
+      </div>
 
-</html>
+      <div class="pub-card">
+        <div class="pub-media"><img class="pub-thumb" src="./images/AAAI24-DC.PNG" alt="AAAI 2024 Target Focused Shallow Transformer"></div>
+        <div>
+          <div class="pub-top"><h3 class="pub-title">Target Focused Shallow Transformer Framework for Efficient Visual Tracking</h3></div>
+          <p class="pub-authors"><b>Md Maklachur Rahman</b></p>
+          <p class="pub-venue-line">AAAI-24 Doctoral Consortium <span class="venue-highlight red">Oral</span></p>
+          <div class="pub-links"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/30405" target="_blank">Paper</a></div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-media"><img class="pub-thumb" src="./images/AAAI24-SA.PNG" alt="AAAI 2024 low-resolution object tracking"></div>
+        <div>
+          <div class="pub-top"><h3 class="pub-title">Learning Random Noise Salient Feature Fusion Siamese Network for Low-Resolution Object Tracking</h3></div>
+          <p class="pub-authors"><b>Md Maklachur Rahman</b>, Tracy Hammond</p>
+          <p class="pub-venue-line">AAAI-24 Student Abstract and Poster Program</p>
+          <div class="pub-links"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/30500" target="_blank">Paper</a></div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-media"><img class="pub-thumb" src="./images/book_chapter1.png" alt="Book chapter thumbnail"></div>
+        <div>
+          <div class="pub-top"><h3 class="pub-title">Siamese-based Attention Learning Networks for Robust Visual Object Tracking</h3></div>
+          <p class="pub-authors"><b>Md Maklachur Rahman</b>, Soon Ki Jung</p>
+          <p class="pub-venue-line">Book Chapter, IntechOpen 2022</p>
+          <div class="pub-links"><a href="https://www.intechopen.com/online-first/80109" target="_blank">Book Chapter</a></div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-media"><img class="pub-thumb" src="./images/deepfake_iwfcv2021.JPG" alt="Deepfake paper thumbnail"></div>
+        <div>
+          <div class="pub-top"><h3 class="pub-title">Challenges and Applications of Face Deepfake</h3></div>
+          <p class="pub-authors">Lamyanba Laishram, <b>Md Maklachur Rahman</b>, Soon Ki Jung</p>
+          <p class="pub-venue-line">IW-FCV 2021 <span class="venue-highlight red">Oral</span></p>
+          <div class="pub-links"><a href="https://link.springer.com/chapter/10.1007/978-3-030-81638-4_11" target="_blank">Paper</a></div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-media"><img class="pub-thumb" src="./images/SiamFRN_arch.JPG" alt="SiamFRN thumbnail"></div>
+        <div>
+          <div class="pub-top"><h3 class="pub-title">Siamese High-Level Feature Refine Network for Visual Object Tracking</h3></div>
+          <p class="pub-authors"><b>Md Maklachur Rahman</b>, Md Rishad Ahmed, Lamyanba Laishram, Seock Ho Kim, Soon Ki Jung</p>
+          <p class="pub-venue-line">Electronics, 2020 <span class="venue-highlight gold">Feature Paper</span></p>
+          <div class="pub-links"><a href="https://www.mdpi.com/2079-9292/9/11/1918/htm" target="_blank">Paper</a><a href="https://github.com/maklachur/SiamFRN" target="_blank">Code</a></div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-media"><img class="pub-thumb" src="./images/SCSAtt.JPG" alt="SCSAtt thumbnail"></div>
+        <div>
+          <div class="pub-top"><h3 class="pub-title">Efficient Visual Tracking with Stacked Channel-Spatial Attention Learning</h3></div>
+          <p class="pub-authors"><b>Md Maklachur Rahman</b>, Mustansar Fiaz, Soon Ki Jung</p>
+          <p class="pub-venue-line">IEEE Access, 2020</p>
+          <div class="pub-links"><a href="https://ieeexplore.ieee.org/abstract/document/9102303" target="_blank">Paper</a><a href="https://github.com/maklachur/SCSAtt" target="_blank">Code</a></div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-media"><img class="pub-thumb" src="./images/afs_tracker.JPG" alt="AFS-Siam thumbnail"></div>
+        <div>
+          <div class="pub-top"><h3 class="pub-title">Adaptive Feature Selection Siamese Networks for Visual Tracking</h3></div>
+          <p class="pub-authors">Mustansar Fiaz, <b>Md Maklachur Rahman</b>, Arif Mahmood, Sehar Shahzad Farooq, Ki Yeol Baek, Soon Ki Jung</p>
+          <p class="pub-venue-line">IW-FCV 2020 <span class="venue-highlight red">Oral</span> <span class="venue-highlight gold">Best Student Paper Award</span></p>
+          <div class="pub-links"><a href="https://link.springer.com/chapter/10.1007%2F978-981-15-4818-5_13" target="_blank">Paper</a><a href="https://github.com/mustansarfiaz/AFS-Siam" target="_blank">Code</a></div>
+        </div>
+      </div>
+
+      <p class="muted-note">For full list of publications, please see my <a href="https://scholar.google.com/citations?user=l1uvg8cAAAAJ&amp;hl=en" target="_blank">Google Scholar profile</a>.</p>
+    </section>
+
+    <section class="panel" id="education">
+      <h2 class="section-title">Education</h2>
+
+      <div class="edu-item">
+        <div class="item-title">PhD in Computer Science</div>
+        <div class="edu-meta">Texas A&amp;M University, College Station, TX, USA &middot; January 2022 - Present</div>
+        <div class="edu-note"><a href="https://srltamu.com/" target="_blank">Sketch Recognition Lab (SRL)</a> &middot; Advisor: Dr. Tracy Hammond</div>
+        <div class="edu-note">Qualifying Examination: Passed in the 99th percentile [<a href="https://github.com/maklachur/maklachur.github.io/blob/master/docs/mft.pdf" target="_blank">link</a>]</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="item-title">MS in Computer Science and Engineering <span class="edu-highlight">Outstanding MS Thesis Award</span></div>
+        <div class="edu-meta">Kyungpook National University, Daegu, South Korea &middot; September 2018 - August 2020</div>
+        <div class="edu-note"><a href="https://sites.google.com/view/knuvrlab/home?authuser=0" target="_blank">Visual AI Lab</a> &middot; Thesis: <a href="http://dcollection.knu.ac.kr/srch/srchDetail/000000097661" target="_blank">Siamese Stacked Channel-Spatial Attention Learning for Visual Tracking</a> &middot; Advisor: Dr. Soon Ki Jung</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="item-title">BS in Computer Science and Engineering</div>
+        <div class="edu-meta">Chittagong University of Engineering &amp; Technology, Bangladesh &middot; March 2009 - September 2013</div>
+        <div class="edu-note">Graduated 7th out of 58 students &middot; Thesis: Digital Watermarking for Image Authentication Based on Combined DCT, DWT and SVD Transformation &middot; Advisor: Dr. Muhammad Ibrahim Khan</div>
+      </div>
+    </section>
+
+    <section class="panel" id="experience">
+      <h2 class="section-title">Experience</h2>
+
+      <div class="exp-item">
+        <div class="exp-role">Graduate Research/Teaching Assistant</div>
+        <div class="exp-place"><a href="https://srltamu.com/" target="
+        <div class="exp-time">January 2022 - Present</div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-role">Researcher</div>
+        <div class="exp-place"><a href="https://en.knu.ac.kr/research/lab03.htm" target="_blank">Center for Embedded Software Technology</a>, Kyungpook National University</div>
+        <div class="exp-time">September 2021 - December 2021</div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-role">Researcher <span class="item-meta">(September 2020 &ndash; August 2021)</span></div>
+        <div class="exp-role">Research Assistant <span class="item-meta">(August 2018 &ndash; August 2020)</span></div>
+        <div class="exp-place"><a href="https://sites.google.com/view/knuvrlab" target="_blank">Visual AI Lab</a>, Kyungpook National University, South Korea</div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-role">Software Engineer</div>
+        <div class="exp-place"><a href="https://research.samsung.com/srbd" target="_blank">Samsung Research Bangladesh</a></div>
+        <div class="exp-time">October 2013 - July 2016</div>
+      </div>
+    </section>
+
+    <section class="panel" id="awards">
+      <h2 class="section-title">Honors and Awards</h2>
+      <ul class="simple-list">
+        <li><b>Outstanding Reviewer</b> &ndash; BMVC 2025, Sheffield, UK</li>
+        <li><b>TAMU CS Department Travel Award</b> &ndash; 2025</li>
+        <li><b>IEFS Graduate Scholarship</b> &ndash; TAMU, 2025</li>
+        <li><b>Best Student Paper Award</b> &ndash; IW-FCV 2020 [<a href="https://github.com/maklachur/maklachur.github.io/blob/master/docs/IW-FCV_Best_Student_Paper_Award.png" target="_blank">Certificate</a>]</li>
+        <li><b>Outstanding MS Thesis Award</b> &ndash; Kyungpook National University (KNU), South Korea, 2020 [<a href="https://github.com/maklachur/maklachur.github.io/blob/master/docs/MS_CSE_THESIS_AWARD.pdf" target="_blank">Certificate</a>]</li>
+        <li><b>Brain Korea (BK) 21 PLUS Scholarship</b> &ndash; KNU, South Korea, September 2018&ndash;August 2020</li>
+        <li><b>KNU International Graduate Scholarship (KINGS)</b> &ndash; Full Scholarship, KNU, South Korea, September 2018&ndash;August 2020</li>
+        <li><b>University Merit Scholarship</b> &ndash; Chittagong University of Engineering &amp; Technology, Bangladesh, 2009&ndash;2013</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2 class="section-title">Reviewer Service</h2>
+      <div class="service-block">
+        <div class="service-row"><span class="service-label">Conference:</span> CVPR, ECCV, AAAI, BMVC, WACV, Graphics Interface</div>
+        <div class="service-row"><span class="service-label">Journal:</span> Pattern Recognition, Pattern Recognition Letters, Computers in Human Behavior, Displays, Electronics, Entropy, IEEE Access, Neurocomputing</div>
+      </div>
+    </section>
+
+    <section class="panel" id="mentoring">
+      <h2 class="section-title">Advising and Mentoring</h2>
+      <p class="mentoring-note">Mentoring activities include ongoing student guidance at Texas A&amp;M University, co-mentored projects, and mentoring with publication outcomes.</p>
+
+      <h3 class="section-subtitle current-subtitle">Current and Recent Student Mentoring</h3>
+      <ul class="mentor-list compact">
+        <li>
+          <div class="item-title">Co-mentoring Groups <span class="item-meta">(BS in CS, Texas A&amp;M University &middot; <a href="https://srltamu.com/" target="_blank">Sketch Recognition Lab (SRL)</a>)</span></div>
+          <div class="item-note">January 2026 &ndash; <b>Present</b></div>
+
+          <div class="group-block">
+            <div class="group-title">Group 1 &ndash; Gender Bias in AI</div>
+            <div class="group-students"><b>Students:</b> Nitya Khurana, Harrison Li, Yuqing Cao, and Ayaan Budhwani.</div>
+          </div>
+
+          <div class="group-block">
+            <div class="group-title">Group 2 &ndash; Segment Anything Model (SAM) for Medical Image Segmentation</div>
+            <div class="group-students"><b>Students:</b> Fawwaz Memon, Nethum Weerasinghe, Armaan Khatwani, and Vidhu Karthik.</div>
+          </div>
+
+          <div class="group-block">
+            <div class="group-title">Group 3 &ndash; Cross-Modality Translation (X-ray to CT/MRI)</div>
+            <div class="group-students"><b>Students:</b> Kaarthi Vedere, Ore Olayinka, Rivan Adhikari, and Rohan Doshi.</div>
+          </div>
+        </li>
+
+        <li>
+          <div class="item-title">Rachit Patel <span class="item-meta">(BS in CS, Texas A&amp;M University &middot; Aggie Research Program)</span></div>
+          <div class="item-note">September 2025 &ndash; <b>Present</b></div>
+          <div class="mentoring-topic"><b>Project Focus:</b> Developing Efficient Architectures for Medical Imaging.</div>
+        </li>
+
+        <li>
+          <div class="item-title">Phillip Ronin <span class="item-meta">(BS in CS, Texas A&amp;M University &middot; Aggie Research Program)</span></div>
+          <div class="item-note">September 2025 &ndash; December 2025</div>
+          <div class="mentoring-topic"><b>Project Focus:</b> Early-stage ML/DL/CV Guidance Toward Real-world Projects.</div>
+        </li>
+
+        <li>
+          <div class="item-title">Sayok Bose <span class="item-meta">(BS in CS, Texas A&amp;M University &middot; Aggie Research Program)</span></div>
+          <div class="item-note">September 2025 &ndash; December 2025</div>
+          <div class="mentoring-topic"><b>Project Focus:</b> Exploration of Deep Learning Architectures for Medical Image Segmentation.</div>
+        </li>
+
+        <li>
+          <div class="item-title">Hemish Radadiya <span class="item-meta">(MS in CS, Lamar University, Texas, USA &middot; Co-mentoring)</span></div>
+          <div class="item-note">July 2025 &ndash; December 2025</div>
+          <div class="mentoring-topic"><b>Project Focus:</b> Aerial Detection of Individuals in Flooded Regions.</div>
+        </li>
+
+        <li>
+          <div class="item-title">Arunima Chowdhury <span class="item-meta">(MS in CS, Texas A&amp;M University)</span></div>
+          <div class="item-note">May 2025 &ndash; December 2025</div>
+          <div class="mentoring-topic"><b>Project Focus:</b> Analyzing Transformer-Based Models for Polyp Segmentation.</div>
+        </li>
+
+        <li>
+          <div class="item-title">Ashwin Parameswaran <span class="item-meta">(BS in CS, Texas A&amp;M University)</span></div>
+          <div class="item-note">June 2024 &ndash; October 2025</div>
+          <div class="mentoring-topic"><b>Project Focus:</b> Exploring Polyp segmentation with a Focus on Boundary Feature Extraction.</div>
+        </li>
+      </ul>
+
+      <h3 class="section-subtitle outcome-subtitle">Mentoring with Publication Outcomes</h3>
+      <p class="outcome-note">Selected mentoring collaborations that resulted in publications or public research outcomes.</p>
+
+      <ul class="mentor-list compact outcome-list">
+		
+        <li>
+          <div class="item-title">Deblina Mazumder Setu <span class="item-meta">(MS in CS, University of Barishal, Bangladesh &middot; Co-mentoring)</span></div>
+          <div class="item-note">2024&ndash;2026</div>
+          <ol class="sub-list">
+            <li>Towards Enhancing Healthcare Data Privacy: Integrating BioClinicalBERT With Polyalphabetic Cipher for Entity Recognition and Anonymization<br><span class="item-meta">Engineering Reports, 2026</span> &ndash; <a href="https://onlinelibrary.wiley.com/doi/10.1002/eng2.70673" target="_blank">[Paper]</a>.</li>
+            <li>Evaluating the Efficacy and Site-Specific Performance of Machine Learning Approaches: A Comprehensive Review of Autism Detection Models<br><span class="item-meta">Franklin Open, 2025</span> &ndash; <a href="https://www.sciencedirect.com/science/article/pii/S2773186325000659" target="_blank">[Paper]</a>.</li>
+            <li>Affordable Early Detection of Autism Spectrum Disorder Using Innovative Eye-Tracking Methods<br><span class="item-meta">27th International Conference on Computer and Information Technology (ICCIT), 2024</span> &ndash; <a href="https://doi.org/10.1109/ICCIT64611.2024.11022483" target="_blank">[Paper]</a>.</li>
+          </ol>
+        </li>
+
+        <li>
+          <div class="item-title">Meet Arvindbhai Monpara <span class="item-meta">(MS in CS, Lamar University, Texas, USA &middot; Co-mentoring)</span></div>
+          <div class="item-note">July 2025 &ndash; December 2025</div>
+          <ol class="sub-list">
+            <li>Stranded Human Detection in Flooded Environments From UAV Imagery<br><span class="item-meta">International Conference on Robotic Computing and Communication (RoboticCC), 2025</span> &ndash; <a href="https://ieeexplore.ieee.org/abstract/document/11391844" target="_blank">[Paper]</a>.</li>
+          </ol>
+        </li>
+
+        <li>
+          <div class="item-title">Afrin Hayat <span class="item-meta">(BS in CS, University of Barishal, Bangladesh &middot; Co-mentoring)</span></div>
+          <div class="item-note">2024</div>
+          <ol class="sub-list">
+            <li>Personalized Teaching Strategy Suggestion for Toddlers with ASD: A Machine Learning and Deep Learning Approach<br><span class="item-meta">27th International Conference on Computer and Information Technology (ICCIT), 2024</span> &ndash; <a href="https://ieeexplore.ieee.org/document/11021790" target="_blank">[Paper]</a>.</li>
+          </ol>
+        </li>
+
+        <li>
+          <div class="item-title">Abhyudaya Singh Tak <span class="item-meta">(<a href="https://sites.google.com/view/knuvrlab/home?authuser=0" target="_blank">Visual AI Lab</a>, Kyungpook National University, South Korea &middot; Co-mentoring)</span></div>
+          <div class="item-note">2022</div>
+          <ol class="sub-list">
+            <li>Visual Object Tracking: Datasets and Related Information<br><span class="item-meta">MITA, 2022</span> &ndash; <a href="https://www.researchgate.net/profile/Abhyudaya-Tak/publication/362541455_Visual_Object_Tracking_Datasets_and_Related_Information/links/62effb29453224769389157c/Visual-Object-Tracking-Datasets-and-Related-Information.pdf" target="_blank">[Paper]</a>.</li>
+          </ol>
+        </li>
+      </ul>
+    </section>
+
+    <div class="footer">
+      Last updated: March 2026 &middot; Website of Md Maklachur Rahman
